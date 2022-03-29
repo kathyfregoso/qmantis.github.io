@@ -127,7 +127,7 @@
   #our-team ul.people {
     /* margin-top: 1rem; */
     gap: 2rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   /* Presentation */
@@ -150,16 +150,16 @@
     background-image: url("../images/logo/QMantis_graphic_color.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 25%;
-    background-position: calc(50% / 3) calc(50% + 2rem);
+    background-size: 40%;
+    background-position: calc(25% / 3) calc(45% + 2rem);
   }
 
   #start-here div.static-graphic-green-greyscale {
     background-image: url("../images/logo/QMantis_graphic_greyscale.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 25%;
-    background-position: calc(50% / 3) calc(50% + 2rem);
+    background-size: 40%;
+    background-position: calc(25% / 3) calc(45% + 2rem);
     display: flex;
   }
 
@@ -167,8 +167,8 @@
     background-image: url("../images/logo/QMantis_graphic_greyscale.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 25%;
-    background-position: calc(50% / 3) calc(50% + 2rem);
+    background-size: 40%;
+    background-position: calc(25% / 3) calc(45% + 2rem);
     display: flex;
   }
 
