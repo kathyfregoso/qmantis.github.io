@@ -444,7 +444,7 @@ body {
 }
 
 #our-team .profile > div > div > p {
-  color: var(--gray-600);
+  color: var(--gray-400);
 }
 
 #our-team .social {
@@ -457,7 +457,7 @@ body {
 }
 
 #our-team .social li {
-  color: var(--gray-500);
+  color: var(--gray-600);
   width: 1.75rem;
   margin-top: 0.25rem;
 }
