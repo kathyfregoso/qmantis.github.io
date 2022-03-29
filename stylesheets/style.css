@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Fredoka";
   src: url("fonts/Fredoka-Regular.ttf") format("tff");
 }
@@ -6,14 +6,15 @@
 @font-face {
   font-family: "Fredoka-SemiBold";
   src: url("fonts/Fredoka-SemiBold.ttf") format("tff");
-}
+} */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap");
+
 :root {
   --qmantis-dark-purple: #260c1a;
   --qmantis-green-sheen: #76b7a7;
   --qmantis-blue-green: #88d7c6;
   --qmantis-orange: #ee6f57;
   --qmantis-desert-sand: #f2cdb3;
-
   --qmantis-floral-white: #f6f1e7;
   --gray-50: #e8e3dc;
   --gray-100: #d3cecb;
@@ -33,8 +34,7 @@
 html,
 body {
   box-sizing: border-box;
-  font-family: "Fredoka", system-ui, -apple-system, "Segoe UI", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Fredoka", sans-serif;
   height: 100%;
 }
 
@@ -102,7 +102,7 @@ body {
 #header {
   align-items: center;
   background-color: var(--qmantis-floral-white);
-  border-bottom: 1px solid var(--gray-200);
+  /* border-bottom: 1px solid var(--gray-200); */
   display: flex;
   justify-content: space-between;
   height: 4rem;
@@ -160,7 +160,7 @@ body {
 
 #mobile-menu {
   background-color: var(--qmantis-floral-white);
-  border-bottom: 1px solid var(--gray-200);
+  /* border-bottom: 1px solid var(--gray-200); */
   display: none;
   padding: 0.25rem 0;
   position: fixed;
@@ -210,7 +210,7 @@ body {
 /* TOC */
 #toc {
   background-color: var(--qmantis-floral-white);
-  border-right: 1px solid var(--gray-200);
+  /* border-right: 1px solid var(--gray-200); */
   bottom: 0;
   left: calc(var(--toc-width) * -1);
   opacity: 0;
@@ -377,7 +377,7 @@ body {
 
 /* Our Team */
 #our-team > div {
-  background-color: var(--gray-900);
+  background-color: var(--qmantis-orange);
 }
 
 #our-team > div > div {
@@ -398,7 +398,7 @@ body {
 }
 
 #our-team > div > div > div p {
-  color: var(--gray-300);
+  color: var(--gray-50);
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -412,7 +412,7 @@ body {
 }
 
 #our-team .profile {
-  background-color: var(--gray-800);
+  background-color: var(--qmantis-desert-sand);
   border-radius: 0.5rem;
   padding: 2rem 1rem;
   text-align: center;
@@ -444,7 +444,7 @@ body {
 }
 
 #our-team .profile > div > div > p {
-  color: var(--qmantis-green-sheen);
+  color: var(--qmantis-floral-white);
 }
 
 #our-team .social {
@@ -457,13 +457,13 @@ body {
 }
 
 #our-team .social li {
-  color: var(--gray-400);
+  color: var(--gray-500);
   width: 1.75rem;
   margin-top: 0.25rem;
 }
 
 #our-team .social a {
-  color: var(--gray-400);
+  color: var(--gray-500);
   font-size: 1.5rem;
 }
 
