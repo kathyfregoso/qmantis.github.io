@@ -113,7 +113,7 @@ body {
 }
 
 #header img {
-  height: 2rem;
+  height: 4rem;
 }
 
 #header nav {
@@ -440,11 +440,11 @@ body {
 }
 
 #our-team .profile > div > div > h3 {
-  color: var(--qmantis-floral-white);
+  color: var(--gray-600);
 }
 
 #our-team .profile > div > div > p {
-  color: var(--qmantis-floral-white);
+  color: var(--gray-600);
 }
 
 #our-team .social {
@@ -468,7 +468,7 @@ body {
 }
 
 #our-team .social a:hover {
-  color: var(--gray-300);
+  color: var(--qmantis-green-sheen);
 }
 
 #our-team img {
@@ -481,6 +481,7 @@ body {
 #presentation div {
   padding: 4rem 0;
   text-align: center;
+  background-color: var(--qmantis-green-sheen);
 }
 
 #presentation iframe {
@@ -551,7 +552,7 @@ body {
 }
 
 #start-here > div div:last-child > img.qmantis {
-  max-width: 50%;
+  max-width: 80%;
 }
 
 #start-here > div div:last-child > * + * {
@@ -566,7 +567,7 @@ body {
 }
 
 #start-here > div div:last-child > p.light-text {
-  color: var(--gray-300);
+  color: var(--gray-100);
 }
 
 #start-here > div div:last-child > p > span {
@@ -584,7 +585,7 @@ body {
 #start-here .qmantis-floral-white h2,
 #start-here .qmantis-orange h2,
 #start-here .qmantis-green-sheen h2 {
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: var(--qmantis-floral-white);
   /* text-shadow: 2px 2px 3px var(--gray-300); */
