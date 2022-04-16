@@ -1,631 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-  <meta charset="UTF-8" />
+    <!-- BEGIN Info -->
+    <meta
+      name="description"
+      content="QMantis - Observability and monitoring for GraphQL APIs"
+    />
+    <meta name="title" property="og:title" content="QMantis" />
+    <meta property="og:type" content="Website" />
 
-  <!-- BEGIN Info -->
-  <meta name="description"
-    content="QMantis - Observability and monitoring for GraphQL APIs" />
-  <meta name="title" property="og:title" content="QMantis" />
-  <meta property="og:type" content="Website" />
+    <meta name="image" property="og:image" content="assets/thumb.png" />
 
-  <meta name="image" property="og:image" content="images/thumb.png" />
+    <meta
+      name="description"
+      property="og:description"
+      content="QMantis - Observability and monitoring for GraphQL APIs"
+    />
+    <meta name="author" content="QMantis" />
+    <!-- END Info -->
 
-  <meta name="description" property="og:description"
-    content="QMantis - Observability and monitoring for GraphQL APIs" />
-  <meta name="author" content="QMantis" />
-  <!-- END Info -->
+    <!-- BEGIN favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="images/favicon/safari-pinned-tab.svg"
+      color="#88D7C6"
+    />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#EE6F57" />
+    <meta
+      name="msapplication-config"
+      content="images/favicon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#F6F1E7" />
+    <!-- END favicon -->
 
-  <!-- BEGIN favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="images/favicon/site.webmanifest" />
-  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#88D7C6" />
-  <link rel="shortcut icon" href="images/favicon/favicon.ico" />
-  <meta name="msapplication-TileColor" content="#EE6F57" />
-  <meta name="msapplication-config" content="images/favicon/browserconfig.xml" />
-  <meta name="theme-color" content="#F6F1E7" />
-  <!-- END favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QMantis</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QMantis</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css"
+    />
+    <link rel="stylesheet" href="stylesheets/reset.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/responsive.css" />
+  </head>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css" />
-  <link rel="stylesheet" href="stylesheets/reset.css" />
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  <link rel="stylesheet" href="stylesheets/responsive.css" />
-</head>
+  <body>
+    <header class="mobile-menu-closed">
+      <div id="header">
+        <a href="/">
+          <img src="images/logo/QMantis_graphic_color.svg" alt="" />
+        </a>
+        <nav>
+          <a href="#start-here" class="selected">Start Here</a>
+          <a href="#case-study">Case Study</a>
+          <a href="#presentation">Presentation</a>
+          <a href="#our-team">Our Team</a>
 
-<body>
-  <header class="mobile-menu-closed">
-    <div id="header">
-      <a href="/">
-        <img src="images/logo/QMantis_graphic_color.svg" alt="" />
-      </a>
-      <nav>
+          <a href="https://github.com/qmantis" target="_blank" class="icon"
+            ><i class="fab fa-github"></i
+          ></a>
+        </nav>
+        <div id="menu">
+          <button type="button">
+            <svg
+              id="mobile-open"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="mobile-close"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="header-buffer"></div>
+
+      <div id="mobile-menu">
         <a href="#start-here" class="selected">Start Here</a>
         <a href="#case-study">Case Study</a>
         <a href="#presentation">Presentation</a>
         <a href="#our-team">Our Team</a>
 
-        <a href="https://github.com/qmantis" target="_blank" class="icon"><i
-            class="fab fa-github"></i></a>
-      </nav>
-      <div id="menu">
-        <button type="button">
-          <svg id="mobile-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="mobile-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <a href="https://github.com/qmantis" target="_blank"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+      </div>
+    </header>
+
+    <div id="start-here" class="main-section">
+      <div class="h-full">
+        <div class="static-graphic-color qmantis-floral-white"></div>
+        <div class="qmantis-dark-purple">
+          <img
+            class="qmantis sm-screen"
+            src="images/logo/QMantis_logo_dark.png"
+            alt=""
+          />
+          <img
+            class="qmantis lg-screen"
+            src="images/logo/qmantis_text.png"
+            alt=""
+          />
+
+          <p class="light-text">
+            An open-source, easy to set up observability solution that generates
+            <span class="text-green-sheen">metrics</span> and
+            <span class="text-orange">traces</span> for GraphQL APIs.<br />
+          </p>
+        </div>
+      </div>
+      <div class="h-full">
+        <div class="qmantis-green-sheen static-graphic-green-greyscale">
+          <h2>Metrics</h2>
+        </div>
+        <div class="qmantis-green-sheen">
+          <h2 class="sm-header">Metrics</h2>
+          <p>Monitor your GraphQL API request rate, latency, and error rate.</p>
+          <img
+            id="metrics-window"
+            src="./images/gifs/metrics.gif"
+            alt="metrics animation"
+          />
+        </div>
+      </div>
+      <div class="h-full">
+        <div class="qmantis-orange static-graphic-orange-greyscale">
+          <h2>Traces</h2>
+        </div>
+        <div class="qmantis-orange">
+          <h2 class="sm-header">Traces</h2>
+          <p>
+            Analyze traces for every request made to the
+            <code>&#47;graphql</code> endpoint.
+          </p>
+          <img
+            id="traces-window"
+            src="./images/gifs/traces.gif"
+            alt="traces animation"
+          />
+        </div>
       </div>
     </div>
 
-    <div id="header-buffer"></div>
+    <aside id="toc">
+      <ul>
+        <li data-section="section-1" class="selected">
+          <a href="#section-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>Introduction</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-2">
+          <a href="#section-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>Section 2</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-2" class="subitem">
+          <a href="#section-2-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>Section 2.1</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-2" class="subitem">
+          <a href="#section-2-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>Section 2.2</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-2" class="subitem">
+          <a href="#section-2-3">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>Section 2.3</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-3">
+          <a href="#section-3">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>3. Observability</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-4">
+          <a href="#section-4">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>4. Existing Solutions</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-4" class="subitem">
+          <a href="#section-4-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>4.1 Fully managed cloud services</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-4" class="subitem">
+          <a href="#section-4-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>4.2 DIY</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-5">
+          <a href="#section-5">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>5. Our solution: QMantis</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-5" class="subitem">
+          <a href="#section-5-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>5.1 How Novels and Barns can use QMantis</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-5" class="subitem">
+          <a href="#section-5-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>5.2 An overview of QMantis</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-5" class="subitem">
+          <a href="#section-5-3">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>5.3 Architecture</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-6">
+          <a href="#section-6">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>6. Design Decisions</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-6" class="subitem">
+          <a href="#section-6-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>6.1 Grafana vs Custom UI</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-6" class="subitem">
+          <a href="#section-6-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>6.2 GraphQL server choice</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-7">
+          <a href="#section-7">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>7. Implementation Challenges</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-7" class="subitem">
+          <a href="#section-7-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>7.1 Generating metrics data from express-graphql</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-7" class="subitem">
+          <a href="#section-7-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>7.2 Connecting metrics with traces</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-8">
+          <a href="#section-8">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>8. Installing and Using QMantis</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-9">
+          <a href="#section-9">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>9. Future Work</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-9" class="subitem">
+          <a href="#section-9-1">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>9.1 Expanding Metrics</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-9" class="subitem">
+          <a href="#section-9-2">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>9.2 Connecting Metrics and Traces</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-9" class="subitem">
+          <a href="#section-9-3">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>9.3 Adding Functionality for Multiple GraphQL Server Types</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-9" class="subitem">
+          <a href="#section-9-4">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>9.4 Incorporating Alerts</p>
+            </div>
+          </a>
+        </li>
+        <li data-section="section-10">
+          <a href="#section-10">
+            <div>
+              <div class="bullet">
+                <div></div>
+              </div>
+              <p>10. References</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </aside>
 
-    <div id="mobile-menu">
-      <a href="#start-here" class="selected">Start Here</a>
-      <a href="#case-study">Case Study</a>
-      <a href="#presentation">Presentation</a>
-      <a href="#our-team">Our Team</a>
+    <div id="case-study" class="main-section">
+      <div id="case-study-content">
+        <div class="prose">
+          <h1>Case Study</h1>
+          <h2 id="section-1">1. Introduction</h2>
+          <p>
+            QMantis is a GraphQL server with an autoinstrumentation solution for
+            GraphQL APIs using Express. It's an easy and quick way to get your
+            Express-based GraphQL API backend running with an observability
+            feature, which generates and exports metrics and traces data and
+            creates a Grafana dashboard for you to analyze.
+          </p>
+          <p></p>
+          <h2 id="section-2">2. Section Title</h2>
+          <p></p>
 
-      <a href="https://github.com/qmantis" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </div>
-  </header>
+          <img class="lazy" data-src="" />
 
-  <div id="start-here" class="main-section">
-    <div class="h-full">
-      <div class="static-graphic-color qmantis-floral-white"></div>
-      <div class="qmantis-dark-purple">
-        <img class="qmantis sm-screen" src="images/logo/QMantis_logo_dark.png" alt="" />
-        <img class="qmantis lg-screen" src="images/logo/qmantis_text.png" alt="" />
-  
+          <h3 id="section-2-1">2.1 Section Title</h3>
+          <p></p>
+          <h4 id="section-2-1-1">2.1.1 Section Title</h4>
 
-        <p class="light-text">
-          
-          An open-source observability and monitoring tool
-          <br />
-          that generates
-          <span class="text-green-sheen">metrics</span> and <span class="text-orange">traces</span> for GraphQL APIs<br />
-        </p>
-      </div>
-    </div>
-    <div class="h-full">
-      <div class="qmantis-green-sheen static-graphic-green-greyscale">
-        <h2>Metrics</h2>
-      </div>
-      <div class="qmantis-green-sheen">
-        <h2 class="sm-header">Metrics</h2>
-        <p>
-          Monitor your GraphQL API request rate, error rate, and latency
-        </p>
-        <img src="" alt="" />
-      </div>
-    </div>
-    <div class="h-full">
-      <div class="qmantis-orange static-graphic-orange-greyscale">
-        <h2>Traces</h2>
-      </div>
-      <div class="qmantis-orange">
-        <h2 class="sm-header">Traces</h2>
-        <p>
-          Analyze traces for every request made to the <code>&#47;graphql</code> endpoint
-        </p>
-        <img src="" alt="" />
-      </div>
-    </div>
-  </div>
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
 
-  <aside id="toc">
-    <ul>
-      <li data-section="section-1" class="selected">
-        <a href="#section-1">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Introduction</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-2">
-        <a href="#section-2">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 2</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-2" class="subitem">
-        <a href="#section-2-1">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 2.1</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-2" class="subitem">
-        <a href="#section-2-2">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 2.2</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-2" class="subitem">
-        <a href="#section-2-3">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 2.3</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-3">
-        <a href="#section-3">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 3</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-4">
-        <a href="#section-4">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>What is QMantis</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-5">
-        <a href="#section-5">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Using QMantis</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-5" class="subitem">
-        <a href="#section-5-1">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 5.1</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-5" class="subitem">
-        <a href="#section-5-2">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 5.2</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-5" class="subitem">
-        <a href="#section-5-3">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 5.3</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-6">
-        <a href="#section-6">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Design Decisions</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-6" class="subitem">
-        <a href="#section-6-1">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 6.1</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-6" class="subitem">
-        <a href="#section-6-2">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 6.2</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-6" class="subitem">
-        <a href="#section-6-3">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 6.2</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-6" class="subitem">
-        <a href="#section-6-4">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 6.4</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-6" class="subitem">
-        <a href="#section-6-5">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 6.5</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-7">
-        <a href="#section-7">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Future Work</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-7" class="subitem">
-        <a href="#section-7-1">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 7.1</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-7" class="subitem">
-        <a href="#section-7-2">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 7</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-7" class="subitem">
-        <a href="#section-7-3">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 7.3</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-7" class="subitem">
-        <a href="#section-7-4">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 7.4</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-7" class="subitem">
-        <a href="#section-7-5">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Section 7.5</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-8">
-        <a href="#section-8">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Conclusion</p>
-          </div>
-        </a>
-      </li>
-      <li data-section="section-9">
-        <a href="#section-9">
-          <div>
-            <div class="bullet">
-              <div></div>
-            </div>
-            <p>Bibliography</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-  </aside>
+          <h4 id="section-2-1-2">2.1.2 Section Title</h4>
 
-  <div id="case-study" class="main-section">
-    <div id="case-study-content">
-      <div class="prose">
-        <h1>Case Study</h1>
-        <h2 id="section-1">1. Introduction</h2>
-        <p>
-          QMantis is a GraphQL server with an autoinstrumentation solution for 
-          GraphQL APIs using Express. It's an easy and quick way to get your 
-          Express-based GraphQL API backend running with an observability feature, 
-          which generates and exports metrics and traces data and creates a Grafana 
-          dashboard for you to analyze.
-        </p>
-        <p>
-          
-        </p>
-        <h2 id="section-2">2. Section Title</h2>
-        <p>
-         
-        </p>
-      
-        <img class="lazy" data-src="" />
-      
-        <h3 id="section-2-1">
-          2.1 Section Title
-        </h3>
-        <p>
-          
-        </p>
-        <h4 id="section-2-1-1">2.1.1 Section Title</h4>
-     
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <h3 id="section-2-2">2.2 Section Title</h3>
 
-        <h4 id="section-2-1-2">2.1.2 Section Title</h4>
-     
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <h3 id="section-2-2">
-          2.2 Section Title
-        </h3>
-     
-        <p>
-          
-        </p>
-       
-        <h4 id="section-2-2-1">2.2.1 Section Title</h4>
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <h4 id="section-2-2-2">
-          2.2.2 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" alt="" />
-        <p>
-          
-        </p>
+          <p></p>
 
-        <h3 id="section-2-3">2.3 Section Title</h3>
-        <p>
-          
-        </p>
-        <h4 id="section-2-3-1">
-          2.3.1 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <h4 id="section-2-3-2">
-          2.3.2 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-     
+          <h4 id="section-2-2-1">2.2.1 Section Title</h4>
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <p></p>
+          <h4 id="section-2-2-2">2.2.2 Section Title</h4>
+          <p></p>
+          <img class="lazy" data-src="" alt="" />
+          <p></p>
 
-        <h2 id="section-3">3. Why We Built QMantis</h2>
-        <p>
-          
-        </p>
-       
-        <img class="lazy" data-src=""  />
-       
-        <h2 id="section-4">4. What is QMantis</h2>
-        <p>
-          
-        </p>
-        
-      
-        <h2 id="section-5">5. Using QMantis</h2>
-        <p>
-          
-        </p>
-        <p></p>
+          <h3 id="section-2-3">2.3 Section Title</h3>
+          <p></p>
+          <h4 id="section-2-3-1">2.3.1 Section Title</h4>
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <h4 id="section-2-3-2">2.3.2 Section Title</h4>
+          <p></p>
+          <img class="lazy" data-src="" />
 
-        <h3 id="section-5-1">5.1 Section Title</h3>
-        <p>
-        
-        </p>
-        <h4 id="section-5-1-1">
-          5.1.1 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <h4 id="section-5-1-2">
-          5.1.2 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <h4 id="section-5-1-3">
-          5.1.3 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-      
-        <h4 id="section-5-1-4">5.1.4 Section Title</h4>
-        <p>
-         
-        </p>
-        <img class="lazy" data-src="" />
-       
-        <h4 id="section-5-1-5">5.1.5 Section Title</h4>
-        <p>
-          
-        </p>
-        <h3 id="section-5-2">5.2 Section Title</h3>
-        <h4 id="section-5-2-1">5.2.1 Section Title</h4>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <h4 id="section-5-2-2">5.2.2 Section Title</h4>
-        <p>
-          
-        </p>
-        <h4 id="section-5-2-3">5.2.3 Section Title</h4>
-        <p>
-         
-        </p>
-        <img class="lazy" data-src="" />
-        <p>
-          
-        </p>
-        <h3 id="section-5-3">5.3 Section Title</h3>
-        <h4 id="3-1-calculate-and-view-results">
-          3.1 Section Title
-        </h4>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <h2 id="section-6">6. Design Decisions</h2>
-        <p>
-          
-        </p>
-        <h3 id="section-6-1">
-          6.1 Section Title
-        </h3>
-        <p>
-          
-        </p>
-        <h4 id="section-6-1-1">6.1.1 Section Title</h4>
-        <p>
-          
-        </p>
-    
-        <h4 id="section-6-1-2">6.1.2 Section Title</h4>
-        
-        <img class="lazy" data-src="" />
-        <p>
-         
-        </p>
-    
-        <h3 id="section-6-2">
-          6.2 Section Title
-        </h3>
+          <h2 id="section-3">3. Observability</h2>
+          <p></p>
 
-        <p>
-          
-        </p>
-        <img class="lazy" data-src="" />
-        <h3 id="section-6-3">
-          6.3 Section Title
-        </h3>
-     
-        <img src="" alt="" />
-        <p></p>
-        <img src="" alt="" />
-        <p>
-          
-        </p>
-        <h3 id="section-6-4">
-          6.3 Section Title
-        </h3>
-        <p>
-       
-        </p>
-     
-        <!-- <figure>
+          <img class="lazy" data-src="" />
+
+          <h2 id="section-4">4. What is QMantis</h2>
+          <p></p>
+          <h3 id="section-4-1">4.1 Fully managed cloud services</h3>
+          <p></p>
+          <h3 id="section-4-2">4.2 DIY</h3>
+          <p></p>
+
+          <h2 id="section-5">5. Our solution: QMantis</h2>
+          <p></p>
+          <p></p>
+
+          <h3 id="section-5-1">5.1 How Novels and Barns can use QMantis</h3>
+          <p></p>
+          <h3 id="section-5-2">5.2 An overview of QMantis</h3>
+          <h4 id="section-5-2-1">5.2.1 Main dashboard</h4>
+          <p></p>
+          <p></p>
+          <h4 id="section-5-2-2">5.2.2 Analyzing traces</h4>
+          <p></p>
+          <h4 id="section-5-2-3">5.2.3 Investigating bottlenecks</h4>
+          <p></p>
+          <h4 id="section-5-2-4">5.2.4 Visualizing resolver runtime</h4>
+          <p></p>
+          <img class="lazy" data-src="" />
+          <p></p>
+          <h3 id="section-5-3">5.3 Architecture</h3>
+          <img
+            class="lazy"
+            data-src="images/diagrams/full-architecture.png"
+            alt="full architecture"
+          />
+          <p>
+            This diagram gives an overview of the QMantis architecture. There
+            are two main overarching and interconnected components:
+            qmantis-express and qmantis-compose. On the left, qmantis-express is
+            a npm package with a configured express-graphql server that is
+            responsible for generating the metrics and traces. On the right,
+            qmantis-compose lets the user deploy the QMantis architecture on
+            their own server using Docker in order to process, export, store,
+            and visualize incoming metrics and traces.
+          </p>
+          <p>
+            Now, to provide a better understanding, let's break up this
+            architecture into key phases.
+          </p>
+          <img
+            class="lazy downsize-1"
+            data-src="images/diagrams/phases.png"
+            alt="all phases"
+          />
+          <p>
+            The QMantis architecture is split up into four major conceptual
+            phases: <br /><strong>Phase 1:</strong> Generate Traces and Metrics
+            with a GraphQL server and OpenTelemetry SDKs <br /><strong
+              >Phase 2:</strong
+            >
+            Export Data for Processing and Storage <br /><strong
+              >Phase 3:</strong
+            >
+            Store Data with Promscale / TimescaleDB <br /><strong
+              >Phase 4:</strong
+            >
+            Visualize / Analyze Data with Grafana
+          </p>
+          <h4 id="section-5-3-1">
+            5.3.1 Phase 1: Generate Data with the qmantis-express GraphQL server
+            and OpenTelemetry SDKs
+          </h4>
+          <img
+            class="lazy downsize-1"
+            data-src="images/diagrams/phase1.png"
+            alt="phase 1"
+          />
+          <p></p>
+          <p></p>
+          <img
+            class="lazy"
+            data-src="images/diagrams/tag.png"
+            alt="tag error"
+          />
+          <h4 id="section-5-3-2">
+            5.3.2 Phase 2: Export to the OpenTelemetry Collector and Prometheus
+          </h4>
+          <img
+            class="lazy downsize-1"
+            data-src="images/diagrams/phase2.png"
+            alt="phase 2"
+          />
+          <img
+            class="lazy"
+            data-src="images/diagrams/ot-collector.png"
+            alt="OpenTelemetry collector"
+          />
+          <p></p>
+          <h4 id="section-5-3-3">
+            5.3.3 Phase 3: Storage with Promscale / TimescaleDB
+          </h4>
+          <img
+            class="lazy downsize-1"
+            data-src="images/diagrams/phase3.png"
+            alt="phase 3"
+          />
+          <p></p>
+          <h4 id="section-5-3-4">
+            5.3.4 Phase 4: Visualize / Analyze with Grafana
+          </h4>
+          <img
+            class="lazy downsize-1"
+            data-src="images/diagrams/phase4.png"
+            alt="phase 4"
+          />
+          <p></p>
+          <h4 id="section-5-3-5">
+            5.3.5 Overall View of QMantis Architecture's Components
+          </h4>
+          <img
+            class="lazy"
+            data-src="images/diagrams/full-architecture-phases.png"
+            alt="full architecture with phases"
+          />
+          <p></p>
+          <img class="lazy" data-src="" />
+          <h2 id="section-6">6. Design Decisions</h2>
+          <p>
+            Let's now go over some of the important design decisions we made
+            while developing QMantis.
+          </p>
+          <h3 id="section-6-1">6.1 Grafana vs Custom UI</h3>
+          <p>
+            When it came to visualizing data, our team considered two options -
+            building a custom user interface or using Grafana. A custom UI would
+            have provided two main benefits: we could have branded the UI to add
+            a QMantis-specific design, and we could have displayed data more
+            intuitively - especially for a first time user. On another hand, we
+            would have to maintain a whole extra code base and any updates to
+            the UI would demand a lot of time.
+          </p>
+
+          <p>
+            Grafana, an industry standard observability tool that many
+            developers are already familiar with, is extremely customizable.
+            Once a user has QMantis running, they can change the dashboard and
+            query settings to best fit their needs. To give an example, projects
+            at different points in the development cycle may want to query data
+            by different lengths of time, and Grafana makes that very easy.
+            Moreover, if our team decide to update the dashboard or panels in
+            the future, reconfiguration would be relatively simple.
+          </p>
+
+          <p>
+            Ultimately, the pros of building a custom UI did not outweigh the
+            pros of using Grafana, so we chose to go with Grafana.
+          </p>
+          <h3 id="section-6-2">6.2 GraphQL server choice</h3>
+          <p>
+            Early on in the process of building QMantis, our team considered
+            building our own GraphQL server. This would have given us control
+            over the implementation of the server, and made it simple to
+            generate and collect data exactly how we wanted. However, if a
+            developer had an already existing GraphQL API, they would have had
+            to change their code to work with our less popular server in order
+            to gain observability. Taking this into consideration, we decided it
+            would be more useful to build a tool that could work with an already
+            widely used GraphQL server.
+          </p>
+
+          <p>
+            Another option was to use Apollo Server, a popular GraphQL server.
+            Note that this is different than the fully managed Apollo Studio
+            observability service. Our team considered using Apollo Server to
+            give users the option to use a GraphQL server that was
+            framework-agnostic for Node.js. However, this option had a major
+            downside -- the way Apollo Server is implemented makes it very
+            difficult to extract meaningful trace information, even when
+            creating custom plugins to extract this information. Moreover,
+            Apollo Studio, from the same company, currently offers observability
+            for a limited amount of metrics for free, and more detailed
+            observability such as traces with a paid subscription when using
+            their server.
+          </p>
+
+          <p>
+            In the end, we landed on Express GraphQL. It's the second most
+            popular JavaScript server, used by millions of developers around the
+            world and, unlike Apollo, Express GraphQL does not currently have
+            any out of the box observability options - paid or unpaid. With this
+            in mind we chose to build our first iteration of QMantis to be
+            designed to work with Express Graphql -- giving it ability to
+            provide observability for a popular GraphQL server with minimal
+            changes to a codebase.
+          </p>
+
+          <!-- <figure>
           <figcaption>figcaption 1</figcaption>
           <img class="lazy" alt="" data-src="" />
         </figure>
@@ -633,243 +724,353 @@
           <figcaption>figcaption 2</figcaption>
           <img class="lazy" alt="" data-src="" />
         </figure> -->
-        <p>
-         
-        </p>
-        <img class="lazy" data-src="" />
-        <h3 id="section-6-5">6.4 Section Title</h3>
-        <p>
-         
-        </p>
-    
-        <img class="lazy" data-src="" />
-        <h2 id="section-7">7. Future Work</h2>
-        <p>
-          
-        </p>
-        <h3 id="section-7-1">7.1 Section Title</h3>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <h3 id="section-7-2">7.2 Section Title</h3>
-        <p>
-          
-        </p>
-        <h3 id="section-7-3">7.3 Section Title</h3>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <h3 id="section-7-4">7.4 Section Title</h3>
-        <p>
-          
-        </p>
-        <h3 id="section-7-5">7.5 Section Title</h3>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <p>
-         
-        </p>
-        <p>
-          
-        </p>
-        <h2 id="section-8">8. Conclusion</h2>
-        <p>
-          
-        </p>
-        <p>
-         
-        </p>
-        <p>        
-        </p>
-        <h2 id="section-9">9. Bibliography</h2>
-        <ol>
-          <li>
-            <p>
-              Author. “Title.”
-              <em><a href="">https://www.url-here.com</a></em>, year,
-              <a
-                href="">https://www.url-here.com</a>.
-              Accessed [Day Month Year].
-            </p>
-          </li>
-          <li>
-            <p>
-              Author. “Title.”
-              <em><a href="">https://www.url-here.com</a></em>, year,
-              <a
-                href="">https://www.url-here.com</a>.
-              Accessed [Day Month Year].
-            </p>
-          </li>
-          <li>
-            <p>
-              Author. “Title.”
-              <em><a href="">https://www.url-here.com</a></em>, year,
-              <a
-                href="">https://www.url-here.com</a>.
-              Accessed [Day Month Year].
-            </p>
-          </li>
-          <li>
-            <p>
-              Author. “Title.”
-              <em><a href="">https://www.url-here.com</a></em>, year,
-              <a
-                href="">https://www.url-here.com</a>.
-              Accessed [Day Month Year].
-            </p>
-          </li>
-          <li>
-            <p>
-              Author. “Title.”
-              <em><a href="">https://www.url-here.com</a></em>, year,
-              <a
-                href="">https://www.url-here.com</a>.
-              Accessed [Day Month Year].
-            </p>
-          </li>
-         
-        </ol>
+
+          <img class="lazy" data-src="" />
+          <h2 id="section-7">7. Future Work</h2>
+          <p></p>
+          <h3 id="section-7-1">
+            7.1 Generating metrics data from express-graphql
+          </h3>
+          <p>
+            Choosing to use express-graphql as our GraphQL server came with
+            significant challenges. Because we didn't have control over the
+            implementation of the server, we needed to be creative in order to
+            collect the data we needed from the request and response objects.
+            That information was essential to generate the accurate and
+            GraphQL-specific telemetry data, which is a key QMantis feature.
+          </p>
+          <p>
+            Counting errors and collecting latency data when status codes was
+            4xx or 5xx were the two most difficult pieces of data to obtain. To
+            get the accurate information, we needed to access the response
+            object before it was sent back to the client. To do that, we were
+            relying on a function from the express-graphql server to access the
+            response object. However, when the status code was 4xx or 5xx, the
+            express-graphql server doesn't execute that function, so we were
+            unable to check for errors or get the latency information we needed.
+          </p>
+          <img
+            class="lazy downsize-2"
+            data-src="images/diagrams/server-challenge.png"
+            alt="server challenge"
+          />
+          <p>
+            We considered modifying our architecture and even prototyped a
+            GraphQL server. This approach worked and we were able to obtain the
+            data we needed, but it came with the limitations mentioned
+            previously. Ultimately, we found a solution to our challenges: we
+            used an existing npm package called response-time to obtain the
+            latency data and relied on trace data to accurately count errors.
+          </p>
+          <h3 id="section-7-2">7.2 Connecting metrics with traces</h3>
+          <p>
+            Another challenged we face was to connect metrics with traces.
+            Initially, we wanted to connect metrics with traces to make it easy
+            for the developer to go from spotting a potential problem to get the
+            detailed trace information. How would that work? When the developer
+            spots something worth investigating, such as an outlier metric
+            datapoint, an increase in the error rate, they would be able to
+            click on the datapoint and it would take them to a list of traces
+            that occurred within that time frame.
+          </p>
+          <p>
+            After a lot of research, we found out that the only way to have this
+            feature in Grafana was to use Grafana Tempo, Grafana's own solution
+            for traces backend. Currently, Grafana Tempo is only compatible with
+            an object storage such as Google Cloud Storage, Amazon S3 or Azure
+            Blob Storage. That meant we would need a different database to store
+            our traces data, adding extra complexity to our architecture.
+            Another option was to build our own UI, which wasn't ideal, as
+            discussed previously.
+          </p>
+          <p>
+            This left us with the challenge of how to make it easy to go from
+            metrics to traces in our dashboard. To solve it, we came up with two
+            traces panels, one that shows traces by latency, making it easy to
+            spot the outliers. The other one, only shows traces that contains
+            errors. As both metrics and traces have a time-stamp, the user can
+            quickly filter the traces panels to look for the needed information.
+            Therefore, our solution makes it easy to investigate problems shown
+            on metrics without the added complexity of a second database.
+          </p>
+
+          <p>
+            It is also worth noting that, as of early 2022, the leading paid
+            observability solutions for GraphQL do not currently support linking
+            metrics and traces together.
+          </p>
+          <h2 id="section-8">8. Installing and Using QMantis</h2>
+          <p></p>
+          <p></p>
+          <p></p>
+          <h2 id="section-9">9. Future Work</h2>
+          <h3 id="section-9-1">9.1 Expanding Metrics</h3>
+          <p>
+            Our team believes adding certain datasets to the dashboard could
+            improve the usefulness of QMantis. Namely, we would like a developer
+            to be able to see how often certain operations are being requested
+            and what the average latency of a specific operation is. These
+            features would allow a developer to get a quick read on the
+            efficiency of individual operations and prioritize potential
+            problems based on how often an operation is being requested.
+          </p>
+          <h3 id="section-9-2">9.2 Connecting Metrics and Traces</h3>
+          <p>
+            Our team believes adding certain datasets to the dashboard could
+            improve the usefulness of QMantis. Namely, we would like a developer
+            to be able to see how often certain operations are being requested
+            and what the average latency of a specific operation is. These
+            features would allow a developer to get a quick read on the
+            efficiency of individual operations and prioritize potential
+            problems based on how often an operation is being requested.
+          </p>
+          <h3 id="section-9-3">
+            9.3 Adding Functionality for Multiple GraphQL Server Types
+          </h3>
+          <p>
+            Our team believes adding certain datasets to the dashboard could
+            improve the usefulness of QMantis. Namely, we would like a developer
+            to be able to see how often certain operations are being requested
+            and what the average latency of a specific operation is. These
+            features would allow a developer to get a quick read on the
+            efficiency of individual operations and prioritize potential
+            problems based on how often an operation is being requested.
+          </p>
+          <h3 id="section-9-4">9.4 Incorporating Alerts</h3>
+          <p>
+            Our team believes adding certain datasets to the dashboard could
+            improve the usefulness of QMantis. Namely, we would like a developer
+            to be able to see how often certain operations are being requested
+            and what the average latency of a specific operation is. These
+            features would allow a developer to get a quick read on the
+            efficiency of individual operations and prioritize potential
+            problems based on how often an operation is being requested.
+          </p>
+          <h2 id="section-10">10. References</h2>
+          <ol>
+            <li>
+              <p>
+                Author. “Title.”
+                <em><a href="">https://www.url-here.com</a></em
+                >, year, <a href="">https://www.url-here.com</a>. Accessed [Day
+                Month Year].
+              </p>
+            </li>
+            <li>
+              <p>
+                Author. “Title.”
+                <em><a href="">https://www.url-here.com</a></em
+                >, year, <a href="">https://www.url-here.com</a>. Accessed [Day
+                Month Year].
+              </p>
+            </li>
+            <li>
+              <p>
+                Author. “Title.”
+                <em><a href="">https://www.url-here.com</a></em
+                >, year, <a href="">https://www.url-here.com</a>. Accessed [Day
+                Month Year].
+              </p>
+            </li>
+            <li>
+              <p>
+                Author. “Title.”
+                <em><a href="">https://www.url-here.com</a></em
+                >, year, <a href="">https://www.url-here.com</a>. Accessed [Day
+                Month Year].
+              </p>
+            </li>
+            <li>
+              <p>
+                Author. “Title.”
+                <em><a href="">https://www.url-here.com</a></em
+                >, year, <a href="">https://www.url-here.com</a>. Accessed [Day
+                Month Year].
+              </p>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="presentation" class="main-section">
-    <div class="qmantis-floral-white">
-      <h2>Presentation</h2>
-      
+    <div id="presentation" class="main-section">
+      <div class="qmantis-floral-white">
+        <h2>Presentation</h2>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/ECDKbk5-eqo"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
-  </div>
 
-  <div id="our-team" class="main-section">
-    <div>
+    <div id="our-team" class="main-section">
       <div>
         <div>
-          <h2>Meet our team</h2>
-          <p class="text-xl text-gray-300">
-            We are currently looking for opportunities. If you liked what you
-            saw and want to talk more, please reach out!
-          </p>
+          <div>
+            <h2>Meet our team</h2>
+            <p class="text-xl text-gray-300">
+              We are currently looking for opportunities. If you liked what you
+              saw and want to talk more, please reach out!
+            </p>
+          </div>
+          <ul class="people">
+            <li class="profile">
+              <img
+                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy"
+                data-src="images/team/kathy.png"
+                alt="profile picture of Kathy"
+              />
+              <div>
+                <div>
+                  <h3>Kathy Fregoso</h3>
+                  <p>Los Angeles, CA, USA</p>
+                </div>
+
+                <ul class="social">
+                  <li>
+                    <a href="mailto:kathyfregoso@gmail.com" target="_blank"
+                      ><i class="fas fa-envelope"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/kathy-fregoso"
+                      target="_blank"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/kathyfregoso" target="_blank"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="" target="_blank"><i class="fas fa-globe"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="profile">
+              <img
+                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy"
+                data-src="images/team/kal.png"
+                alt="profile picture of Kal"
+              />
+              <div>
+                <div>
+                  <h3>Kal Krueger</h3>
+                  <p>Bozeman, MT, USA</p>
+                </div>
+
+                <ul class="social">
+                  <li>
+                    <a href="mailto:kkrueger19@gmail.com" target="_blank"
+                      ><i class="fas fa-envelope"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/kal-krueger-19a960161/"
+                      target="_blank"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/kalkrueger" target="_blank"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="" target="_blank"><i class="fas fa-globe"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="profile">
+              <img
+                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy"
+                data-src="images/team/lisa.png"
+                alt="profile picture of Lisa"
+              />
+              <div>
+                <div>
+                  <h3>Lisa Melo</h3>
+                  <p>Montreal, Quebec, Canada</p>
+                </div>
+
+                <ul class="social">
+                  <li>
+                    <a href="mailto:melo.lisamb@gmail.com" target="_blank"
+                      ><i class="fas fa-envelope"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/lisa-melo"
+                      target="_blank"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/lisa-m1" target="_blank"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="" target="_blank"><i class="fas fa-globe"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="profile">
+              <img
+                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy"
+                data-src="images/team/emily.png"
+                alt="profile picture of Emily"
+              />
+              <div>
+                <div>
+                  <h3>Emily Siu</h3>
+                  <p>Rockville, MD, USA</p>
+                </div>
+
+                <ul class="social">
+                  <li>
+                    <a href="mailto:em.kayama@gmail.com" target="_blank"
+                      ><i class="fas fa-envelope"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/emilyksiu/"
+                      target="_blank"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/eemkey" target="_blank"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="" target="_blank"><i class="fas fa-globe"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul class="people">
-          <li class="profile">
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy"
-              data-src="" alt="" />
-            <div>
-              <div>
-                <h3>Kathy Fregoso</h3>
-                <p>Los Angeles, CA, USA</p>
-              </div>
-
-              <ul class="social">
-                <li>
-                  <a href="mailto:kathyfregoso@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/kathy-fregoso" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/kathyfregoso" target="_blank"><i class="fab fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="" target="_blank"><i class="fas fa-globe"></i></a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="profile">
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="" alt="" />
-            <div>
-              <div>
-                <h3>Kal Krueger</h3>
-                <p>Bozeman, MT, USA</p>
-              </div>
-
-              <ul class="social">
-                <li>
-                  <a href="mailto:kkrueger19@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/kal-krueger-19a960161/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/kalkrueger" target="_blank"><i class="fab fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="" target="_blank"><i class="fas fa-globe"></i></a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="profile">
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="" alt="" />
-            <div>
-              <div>
-                <h3>Lisa Melo</h3>
-                <p>Montreal, Quebec, Canada</p>
-              </div>
-
-              <ul class="social">
-                <li>
-                  <a href="mailto:melo.lisamb@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/lisa-melo" target="_blank"><i
-                      class="fab fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/lisa-m1" target="_blank"><i class="fab fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="" target="_blank"><i class="fas fa-globe"></i></a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="profile">
-            <img class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56 lazy" data-src="" alt="" />
-            <div>
-              <div>
-                <h3>Emily Siu</h3>
-                <p>Rockville, MD, USA</p>
-              </div>
-
-              <ul class="social">
-                <li>
-                  <a href="mailto:em.kayama@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/emilyksiu/" target="_blank"><i
-                      class="fab fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="https://github.com/eemkey" target="_blank"><i class="fab fa-github"></i></a>
-                </li>
-                <li>
-                  <a href="" target="_blank"><i class="fas fa-globe"></i></a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
       </div>
     </div>
-  </div>
 
-  <script src="javascripts/script.js"></script>
-</body>
-
+    <script src="javascripts/script.js"></script>
+  </body>
 </html>
