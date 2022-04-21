@@ -107,7 +107,8 @@ aside::-webkit-scrollbar {
   padding: 0 1rem;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 100; 
+  font-family: "Fredoka", sans-serif;
 }
 
 #header img {
@@ -163,6 +164,7 @@ aside::-webkit-scrollbar {
   position: fixed;
   width: 100%;
   z-index: 100;
+  font-family: "Fredoka", sans-serif;
 }
 
 #mobile-menu > * + * {
@@ -217,6 +219,7 @@ aside::-webkit-scrollbar {
   transition: all 0.5s ease;
   visibility: hidden;
   width: var(--toc-width);
+  font-family: "Fredoka", sans-serif;
 }
 
 #toc li {
@@ -335,19 +338,45 @@ aside::-webkit-scrollbar {
   font-family: "Fredoka", sans-serif;
 }
 
+.prose h2 {
+  text-align: justify;
+  font-size: 2rem;
+}
+
+.prose h2 {
+  text-align: justify;
+  font-size: 1.75rem;
+}
+
+.prose h3 {
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+.prose h4 {
+  text-align: justify;
+  font-size: 1.25rem;
+}
+
 .prose p {
   text-align: justify;
+  font-size: 1rem;
+}
+
+.prose sup {
+  text-align: justify;
+  font-size: .75rem;
+  color: var(--qmantis-green-sheen);
 }
 
 .prose a {
-  color: #4c74b9;
-  text-decoration: underline !important;
-  text-decoration-color: #d2dcee !important;
+  color: var(--qmantis-green-sheen);
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .prose a:hover {
-  text-decoration-color: #829dce !important;
+  color: var(--qmantis-desert-sand) !important;
 }
 
 .prose blockquote {
@@ -359,11 +388,11 @@ aside::-webkit-scrollbar {
 }
 
 .prose code {
-  background-color: var(--gray-100);
-  color: var(--gray-600);
+  /* background-color: var(--gray-100); */
+  color: var(--qmantis-orange);
   font-family: monospace;
   font-weight: normal;
-  font-size: 0.75rem;
+  font-size: 1rem;
   border-radius: 0.25rem;
   padding: 0.25rem 0.375rem;
   line-height: 1.5rem;
@@ -422,9 +451,16 @@ img.shadow {
   border-radius: 7px;
 }
 
-.prose figcaption p {
+.prose figcaption p code {
   text-align: center;
   font-size: 0.83rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+.img-caption {
+  text-align: center;
+  font-size: 0.83rem;
+  font-family: "Fredoka", sans-serif;
 }
 
 .steps-number {
@@ -635,6 +671,16 @@ img.shadow {
   text-align: center;
 }
 
+#start-here > div div:last-child > p > code {
+  color: var(--qmantis-floral-white);
+  background-color: var(--qmantis-green-sheen);
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  font-family: monospace;
+}
+
 #start-here > div div:last-child > p.light-text {
   color: var(--gray-100);
 }
@@ -664,6 +710,10 @@ img.shadow {
   font-weight: 600;
   font-family: "Fredoka", sans-serif;
   color: var(--qmantis-floral-white);
+}
+
+#start-here h2.lg-header {
+  font-family: "Fredoka", sans-serif;
 }
 
 #start-here video.pad {
