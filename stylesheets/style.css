@@ -14,7 +14,7 @@
   --qmantis-green-sheen: #76b7a7;
   --qmantis-blue-green: #88d7c6;
   --qmantis-orange: #ee6f57;
-  --qmantis-dark-orange: #EE5942;
+  --qmantis-dark-orange: #ee5942;
   --qmantis-desert-sand: #f2cdb3;
   --qmantis-floral-white: #f6f1e7;
   --gray-50: #e8e3dc;
@@ -47,12 +47,12 @@ body {
 
 /* hide scrollbar in aside */
 aside {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
-aside::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+aside::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .h-full {
@@ -78,10 +78,6 @@ aside::-webkit-scrollbar {
 .qmantis-desert-sand {
   background-color: var(--qmantis-desert-sand);
 }
-
-/* .bg-gray {
-  background-color: #eee;
-} */
 
 .text-orange {
   color: var(--qmantis-orange);
@@ -113,7 +109,6 @@ aside::-webkit-scrollbar {
 #header {
   align-items: center;
   background-color: var(--qmantis-floral-white);
-  /* border-bottom: 1px solid var(--gray-200); */
   display: flex;
   justify-content: space-between;
   height: 4rem;
@@ -171,7 +166,6 @@ aside::-webkit-scrollbar {
 
 #mobile-menu {
   background-color: var(--qmantis-floral-white);
-  /* border-bottom: 1px solid var(--gray-200); */
   display: none;
   padding: 0.25rem 0;
   position: fixed;
@@ -221,7 +215,6 @@ aside::-webkit-scrollbar {
 /* TOC */
 #toc {
   background-color: var(--qmantis-floral-white);
-  /* border-right: 1px solid var(--gray-200); */
   bottom: 0;
   left: calc(var(--toc-width) * -1);
   opacity: 0;
@@ -309,8 +302,6 @@ aside::-webkit-scrollbar {
 /* Case Study */
 #case-study-content {
   background-color: var(--qmantis-floral-white);
-  /* border-bottom: 1px solid var(--gray-200);
-  border-top: 1px solid var(--gray-200); */
 }
 
 #case-study-content img {
@@ -334,20 +325,19 @@ aside::-webkit-scrollbar {
   margin-top: -6rem;
   height: 6rem;
   visibility: hidden;
-  /* background-color: var(--qmantis-floral-white); */
   pointer-events: none;
 }
 
 .prose {
   color: var(--qmantis-dark-purple);
   max-width: 70%;
+  margin: 0 auto;
 }
 
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
-  /* font-family: 'WorkSans-SemiBold'; */
   color: var(--qmantis-dark-purple);
   margin-top: 3rem;
 }
@@ -377,12 +367,60 @@ aside::-webkit-scrollbar {
   margin-right: auto;
 }
 
+#case-study img.downsize-0 {
+  width: 600px;
+}
+
 #case-study img.downsize-1 {
   width: 500px;
 }
 
 #case-study img.downsize-2 {
   width: 400px;
+}
+
+#case-study img.downsize-3 {
+  width: 300px;
+}
+
+#case-study img.downsize-4 {
+  width: 200px;
+}
+
+#case-study img.downsize-5 {
+  width: 100px;
+}
+
+.endpoint,
+.endpoint-2,
+.docker-images {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2px;
+}
+
+.endpoint figure:first-child {
+  padding-top: 21px;
+}
+
+.endpoint-2 figure:first-child {
+  padding-top: 8px;
+}
+
+img.shadow {
+  filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.4));
+  border-radius: 7px;
+}
+
+figcaption p {
+  text-align: center;
+  font-size: 0.83rem;
+}
+
+.steps-number {
+  color: var(--qmantis-dark-orange);
+  size: 1.2rem;
+  font-weight: bold;
 }
 
 .prose code {
@@ -570,10 +608,6 @@ aside::-webkit-scrollbar {
   justify-content: center;
   padding: 4rem 1rem;
 }
-
-/* #start-here > div div:last-child > img {
-  width: 100%;
-} */
 
 #start-here #traces-window {
   width: 100%;
