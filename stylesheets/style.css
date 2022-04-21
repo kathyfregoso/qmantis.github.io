@@ -1,13 +1,5 @@
-/* @font-face {
-  font-family: "Fredoka";
-  src: url("fonts/Fredoka-Regular.ttf") format("tff");
-}
-
-@font-face {
-  font-family: "Fredoka-SemiBold";
-  src: url("fonts/Fredoka-SemiBold.ttf") format("tff");
-} */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
 :root {
   --qmantis-dark-purple: #260c1a;
@@ -35,7 +27,7 @@
 html,
 body {
   box-sizing: border-box;
-  font-family: "Fredoka", sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 100%;
 }
 
@@ -330,7 +322,7 @@ aside::-webkit-scrollbar {
 
 .prose {
   color: var(--qmantis-dark-purple);
-  max-width: 70%;
+  max-width: 100ch;
   margin: 0 auto;
 }
 
@@ -340,6 +332,11 @@ aside::-webkit-scrollbar {
 .prose h4 {
   color: var(--qmantis-dark-purple);
   margin-top: 3rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+.prose p {
+  text-align: justify;
 }
 
 .prose a {
@@ -425,7 +422,7 @@ img.shadow {
   border-radius: 7px;
 }
 
-figcaption p {
+.prose figcaption p {
   text-align: center;
   font-size: 0.83rem;
 }
@@ -439,6 +436,10 @@ figcaption p {
 /* Our Team */
 #our-team > div {
   background-color: var(--qmantis-orange);
+}
+
+#our-team h2 {
+  font-family: "Fredoka", sans-serif;
 }
 
 #our-team > div > div {
@@ -562,6 +563,7 @@ figcaption p {
   font-weight: 800;
   font-size: 2.25rem;
   margin-bottom: 1em;
+  font-family: "Fredoka", sans-serif;
 }
 
 /* start-here */
@@ -655,14 +657,13 @@ figcaption p {
   font-size: 3.5rem;
   font-weight: 800;
   color: var(--qmantis-floral-white);
-  /* text-shadow: 2px 2px 3px var(--gray-300); */
 }
 
 #start-here h2.sm-header {
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 600;
+  font-family: "Fredoka", sans-serif;
   color: var(--qmantis-floral-white);
-  /* text-shadow: 2px 2px 3px var(--gray-300); */
 }
 
 #start-here video.pad {
