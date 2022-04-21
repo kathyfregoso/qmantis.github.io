@@ -1,10 +1,6 @@
 # [QMantis](https://qmantis.github.io)
 
-<p align="center">
-  <a href="https://qmantis.github.io">
-    <img src="" />
-  </a>
-</p>
+![QMantis color logo](https://i.ibb.co/YjZnTdj/QMantis-logo-color-small2.png)
 
 ## QMantis: Observability and monitoring for GraphQL APIs
 
