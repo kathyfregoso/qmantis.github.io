@@ -547,9 +547,10 @@
             operations.
           </p>
           <p>
-            Before diving into the details of how the creation of QMantis, let us
-            introduce Novels and Barns, a hypothetical company that can benefit
-            from adding a GraphQL-specific observability service to their API.
+            Before diving into the details of how the creation of QMantis, let
+            us introduce Novels and Barns, a hypothetical company that can
+            benefit from adding a GraphQL-specific observability service to
+            their API.
           </p>
           <h3 id="section-1-2">1.2 Novels and Barns</h3>
           <img
@@ -581,9 +582,10 @@
             critical, especially for a small retailer like Novels and Barns, as
             when an application is slow, there is the added risk of customers
             buying fewer books, or simply giving up and not purchasing anything
-            at all. Knowing the negative impact that high latency has on sales <sup><a href="#section-10">[1]</a></sup>,
-            the team is working hard to improve the performance of their mobile
-            web application.
+            at all. Knowing the negative impact that high latency has on sales
+            <sup><a href="#section-10">[1]</a></sup
+            >, the team is working hard to improve the performance of their
+            mobile web application.
           </p>
           <img
             class="lazy downsize-l"
@@ -629,13 +631,14 @@
             requests to get the information they need. For instance, if a Novels
             and Barns client wants to get a list of all the romance novels
             written by a specific author, they need to make three different GET
-            requests: one to the <code>/authors</code> endpoint, another to the <code>/genres</code>
-            endpoint, and one to the <code>/books</code> endpoint. Even in this simple
-            example, there are already three network calls made between the
-            client and the server. As mobile devices are designed for mobility,
-            they do not always have access to a good network connection, so
-            these multiple network calls can take time to complete, impacting
-            the amount of time it takes for a page to load.
+            requests: one to the <code>/authors</code> endpoint, another to the
+            <code>/genres</code> endpoint, and one to the
+            <code>/books</code> endpoint. Even in this simple example, there are
+            already three network calls made between the client and the server.
+            As mobile devices are designed for mobility, they do not always have
+            access to a good network connection, so these multiple network calls
+            can take time to complete, impacting the amount of time it takes for
+            a page to load.
           </p>
           <img
             class="lazy downsize-l"
@@ -666,12 +669,13 @@
             the example above, the client wants to load a book page, and to do
             that, the client needs the author's first and last name. However,
             because a REST API always returns the same resource representation,
-            when a client makes a GET request to the <code>/authors</code> endpoint, the
-            client receives a lot of unnecessary information. Mobile devices may
-            have limited bandwidth and computing power, making it harder to
-            handle a large amount of data. In this scenario, using GraphQL
-            minimizes bandwidth usage, as requests only fetch exactly the data
-            that is needed, eliminating the issue of over-fetching.
+            when a client makes a GET request to the
+            <code>/authors</code> endpoint, the client receives a lot of
+            unnecessary information. Mobile devices may have limited bandwidth
+            and computing power, making it harder to handle a large amount of
+            data. In this scenario, using GraphQL minimizes bandwidth usage, as
+            requests only fetch exactly the data that is needed, eliminating the
+            issue of over-fetching.
           </p>
           <h3 id="section-2-2">2.2 Novels and Barns</h3>
           <p>
@@ -709,11 +713,14 @@
           />
           <p>
             Telemetry is the automated process of remotely collecting and
-            transmitting measurements and other types of data <sup><a href="#section-10">[2]</a></sup>. This
-            process is used in many industries, such as healthcare,
-            transportation, and meteorology <sup><a href="#section-10">[3]</a></sup>. In the context of software
-            engineering, telemetry data allows teams to measure and track the
-            performance and the health of an application or system.
+            transmitting measurements and other types of data
+            <sup><a href="#section-10">[2]</a></sup
+            >. This process is used in many industries, such as healthcare,
+            transportation, and meteorology
+            <sup><a href="#section-10">[3]</a></sup
+            >. In the context of software engineering, telemetry data allows
+            teams to measure and track the performance and the health of an
+            application or system.
           </p>
           <p>
             The three main telemetry data types used in software engineering are
@@ -750,7 +757,8 @@
           </p>
           <p>
             QMantis tracks what is known as RED metrics: request rate, error
-            rate, and duration (latency) <sup><a href="#section-10">[4]</a></sup>.
+            rate, and duration (latency) <sup><a href="#section-10">[4]</a></sup
+            >.
           </p>
           <h4 id="section-3-2-2">3.2.2 Traces</h4>
           <img
@@ -832,11 +840,11 @@
             provide enough information or context to find the root cause of a
             problem, even within a monolithic architecture. This can be
             explained by three features unique to GraphQL, which are not found
-            in REST: firstly, GraphQL only has one endpoint (<code>/graphql</code>),
-            secondly, most GraphQL requests default to POST requests, and
-            finally, most GraphQL responses return a status code of 200, even
-            when errors occur. Let us discuss each of these points in more
-            detail.
+            in REST: firstly, GraphQL only has one endpoint
+            (<code>/graphql</code>), secondly, most GraphQL requests default to
+            POST requests, and finally, most GraphQL responses return a status
+            code of 200, even when errors occur. Let us discuss each of these
+            points in more detail.
           </p>
           <h4 id="section-3-3-1">3.3.1 Only One Endpoint</h4>
           <div class="endpoint">
@@ -846,8 +854,10 @@
                 data-src="images/diagrams/endpoint.png"
                 alt="graphql endpoint"
               />
-              <figcaption class="img-caption">
-                <p>GraphQL: Latency data for the <code>/graphql</code> endpoint.</p>
+              <figcaption>
+                <p>
+                  GraphQL: Latency data for the <code>/graphql</code> endpoint.
+                </p>
               </figcaption>
             </figure>
             <figure>
@@ -856,22 +866,23 @@
                 data-src="images/diagrams/endpoint-rest.png"
                 alt="rest endpoint"
               />
-              <figcaption class="img-caption">
+              <figcaption>
                 <p>
-                  REST: Latency data for the <code>/authors</code>, <code>/genre</code>, and <code>/books</code>
+                  REST: Latency data for the <code>/authors</code>,
+                  <code>/genre</code>, and <code>/books</code>
                   endpoints.
                 </p>
               </figcaption>
             </figure>
           </div>
           <p>
-            As GraphQL only has one endpoint, which is <code>/graphql</code>, developers
-            need more information to investigate application issues. For
-            example, to find the root causes of high latency, developers need to
-            answer questions such as: Is the latency because of the complexity
-            of the request? Is there a performance bottleneck? If yes, where is
-            this happening? There is a potential problem, but that is all the
-            information known at this point.
+            As GraphQL only has one endpoint, which is <code>/graphql</code>,
+            developers need more information to investigate application issues.
+            For example, to find the root causes of high latency, developers
+            need to answer questions such as: Is the latency because of the
+            complexity of the request? Is there a performance bottleneck? If
+            yes, where is this happening? There is a potential problem, but that
+            is all the information known at this point.
           </p>
 
           <p>
@@ -887,11 +898,11 @@
           <p>
             In contrast, as seen in the second diagram, with REST APIs, it is
             easier to quickly narrow down where the issue is coming from: the
-            <code>/authors</code> endpoint. Also, because REST always returns the same
-            resource representation, an increase in latency is often related to
-            a backend bottleneck. To get more information about the source of
-            high latency, developers can just filter by the HTTP response status
-            code and HTTP request method.
+            <code>/authors</code> endpoint. Also, because REST always returns
+            the same resource representation, an increase in latency is often
+            related to a backend bottleneck. To get more information about the
+            source of high latency, developers can just filter by the HTTP
+            response status code and HTTP request method.
           </p>
           <h4 id="section-3-3-2">
             3.3.2 Most GraphQL Requests are POST Requests
@@ -903,7 +914,7 @@
                 data-src="images/diagrams/http-method.png"
                 alt="graphql http method"
               />
-              <figcaption class="img-caption">
+              <figcaption>
                 <p>Most GraphQL requests are POST requests.</p>
               </figcaption>
             </figure>
@@ -913,7 +924,7 @@
                 data-src="images/diagrams/http-method-rest.png"
                 alt="rest http method"
               />
-              <figcaption class="img-caption">
+              <figcaption>
                 <p>REST requests can be filtered by HTTP method.</p>
               </figcaption>
             </figure>
@@ -1342,12 +1353,13 @@
           <p>
             This diagram gives an overview of the QMantis architecture. There
             are two main overarching and interconnected components:
-            <code>qmantis-express</code> and qmantis-compose. On the left, <code>qmantis-express</code> is
-            a npm package with a configured express-graphql server that is
-            responsible for generating the metrics and traces. On the right,
-            qmantis-compose lets the user deploy the QMantis architecture on
-            their own server using Docker in order to process, export, store,
-            and visualize incoming metrics and traces.
+            <code>qmantis-express</code> and qmantis-compose. On the left,
+            <code>qmantis-express</code> is a npm package with a configured
+            express-graphql server that is responsible for generating the
+            metrics and traces. On the right, qmantis-compose lets the user
+            deploy the QMantis architecture on their own server using Docker in
+            order to process, export, store, and visualize incoming metrics and
+            traces.
           </p>
           <p>
             Now, to provide a better understanding, let us break up this
@@ -1373,8 +1385,8 @@
             Visualize / Analyze Data with Grafana
           </p>
           <h4 id="section-5-3-1">
-            5.3.1 Phase 1: Generate Data with the <code>qmantis-express</code> GraphQL server
-            and OpenTelemetry SDKs
+            5.3.1 Phase 1: Generate Data with the
+            <code>qmantis-express</code> GraphQL server and OpenTelemetry SDKs
           </h4>
           <img
             class="lazy downsize-l"
@@ -1383,17 +1395,19 @@
           />
           <p>
             The first phase of the QMantis architecture, which is part of the
-            <code>qmantis-express</code> component, is to generate the metrics and traces. In
-            order to eventually visualize the data on the dashboard, the data
-            has to be created first. QMantis uses OpenTelemetry to generate and
-            collect telemetry data such as metrics and traces.
+            <code>qmantis-express</code> component, is to generate the metrics
+            and traces. In order to eventually visualize the data on the
+            dashboard, the data has to be created first. QMantis uses
+            OpenTelemetry to generate and collect telemetry data such as metrics
+            and traces.
           </p>
           <p>
             OpenTelemetry is an open-source project that is composed of a
-            collection of tools, including APIs and SDKs. It is the current leading 
-            developer tool kit for generating, collecting, and exporting 
-            telemetry data <sup><a href="#section-10">[5]</a></sup>. In QMantis' use
-            case, we use OpenTelementry to instrument a GraphQL API.
+            collection of tools, including APIs and SDKs. It is the current
+            leading developer tool kit for generating, collecting, and exporting
+            telemetry data <sup><a href="#section-10">[5]</a></sup
+            >. In QMantis' use case, we use OpenTelementry to instrument a
+            GraphQL API.
           </p>
           <p>
             To create the telemetry data, we configured an existing GraphQL
@@ -1409,15 +1423,15 @@
           <p>
             This is a crucial phase of the QMantis architecture because it is
             when we ensure the data we generate is specific to GraphQL. For
-            example, the <code>qmantis-express</code> component checks the response object to
-            see if there is an errors property. If there is one, it updates the
-            error rate counter. Also, one of the panels in the QMantis dashboard
-            has all traces that contain an error. As mentioned earlier,
-            developers cannot rely on a response status code to filter traces for
-            errors, as most GraphQL responses, regardless of their success,
-            return a status code of 200. To address this, we added custom error
-            tags as needed, making it easy to filter and visualize all traces
-            with errors.
+            example, the <code>qmantis-express</code> component checks the
+            response object to see if there is an errors property. If there is
+            one, it updates the error rate counter. Also, one of the panels in
+            the QMantis dashboard has all traces that contain an error. As
+            mentioned earlier, developers cannot rely on a response status code
+            to filter traces for errors, as most GraphQL responses, regardless
+            of their success, return a status code of 200. To address this, we
+            added custom error tags as needed, making it easy to filter and
+            visualize all traces with errors.
           </p>
           <p>
             Additionally, the majority of GraphQL requests are POST requests.
@@ -1445,8 +1459,9 @@
           <p>
             In the case of traces, the data is exported to the OpenTelemetry
             Collector. The OpenTelemetry Collector is a central component that
-            handles additional steps such as batching and processing of traces <sup><a href="#section-10">[6]</a></sup>.
-            It consists of three main elements: receivers, processors, and
+            handles additional steps such as batching and processing of traces
+            <sup><a href="#section-10">[6]</a></sup
+            >. It consists of three main elements: receivers, processors, and
             exporters, as seen below:
           </p>
           <img
@@ -1502,14 +1517,14 @@
           <p>
             As time is a key component of how QMantis generates and reads data,
             we chose to use a time-series database, as it is optimized for
-            time-stamped data. Time matters. If there is a potential problem,
-            it is important to know if it happened at 1 pm or 8 pm. If a user
-            wants to do maintenance during downtime, they need to know when
-            there are the downtimes. Also, time-series databases support a
-            high-rate of inserts and a low-rate of modifications and deletions.
-            This is a great fit for QMantis' use case because when a metric or
-            trace is created, there is no need to ever change it, the user only
-            needs to insert it and read it.
+            time-stamped data. Time matters. If there is a potential problem, it
+            is important to know if it happened at 1 pm or 8 pm. If a user wants
+            to do maintenance during downtime, they need to know when there are
+            the downtimes. Also, time-series databases support a high-rate of
+            inserts and a low-rate of modifications and deletions. This is a
+            great fit for QMantis' use case because when a metric or trace is
+            created, there is no need to ever change it, the user only needs to
+            insert it and read it.
           </p>
           <p>
             Specifically, QMantis uses TimescaleDB, an open-source time-series
@@ -1561,17 +1576,17 @@
           />
           <p>
             To recap, the above illustrates the QMantis architecture and its two
-            main components: <code>qmantis-express</code> (which consists of the Generate
-            phase) and qmantis-compose (which consists of the Export, Store, and
-            Visualize phases).
+            main components: <code>qmantis-express</code> (which consists of the
+            Generate phase) and qmantis-compose (which consists of the Export,
+            Store, and Visualize phases).
           </p>
           <p>
-            In summary, <code>qmantis-express</code> is a npm package, composed of
-            OpenTelemetry SDKs and a GraphQL server observability configuration.
-            It is responsible for generating the metrics and traces
-            data.qmantis-compose lets the user quickly and seamlessly deploy the
-            QMantis architecture on their own server using Docker. It contains
-            all the tools necessary to export, store, and visualize
+            In summary, <code>qmantis-express</code> is a npm package, composed
+            of OpenTelemetry SDKs and a GraphQL server observability
+            configuration. It is responsible for generating the metrics and
+            traces data.qmantis-compose lets the user quickly and seamlessly
+            deploy the QMantis architecture on their own server using Docker. It
+            contains all the tools necessary to export, store, and visualize
             GraphQL-specific observability data.
           </p>
           <h2 id="section-6">6. Design Decisions</h2>
@@ -1619,38 +1634,39 @@
           </p>
 
           <p>
-            Another option was to use <code>apollo-server</code>, a popular GraphQL server package.
-            Note that this is different than the fully managed Apollo Studio
-            observability service. Our team considered using <code>apollo-server</code> to
-            give users the option to use a GraphQL server that was
-            framework-agnostic for Node.js. However, this option had a major
-            downside - the way <code>apollo-server</code> is implemented makes it very
-            difficult to extract meaningful trace data, even when creating
-            custom plugins to extract this information.
+            Another option was to use <code>apollo-server</code>, a popular
+            GraphQL server package. Note that this is different than the fully
+            managed Apollo Studio observability service. Our team considered
+            using <code>apollo-server</code> to give users the option to use a
+            GraphQL server that was framework-agnostic for Node.js. However,
+            this option had a major downside - the way
+            <code>apollo-server</code> is implemented makes it very difficult to
+            extract meaningful trace data, even when creating custom plugins to
+            extract this information.
           </p>
 
           <p>
-            In the end, we landed on <code>express-graphql</code>, a popular JavaScript
-            server for GraphQL - used by millions of developers around the
-            world. <code>express-graphql</code> does not currently have any out-of-the-box
-            observability options - paid or unpaid, and it is highly
-            customizable, allowing for developers to create extensions with
-            observability features. With this in mind, we built the first
-            iteration of QMantis using an extended <code>express-graphql</code> server,
-            providing an observability service packaged with an already popular
-            GraphQL server.
+            In the end, we landed on <code>express-graphql</code>, a popular
+            JavaScript server for GraphQL - used by millions of developers
+            around the world. <code>express-graphql</code> does not currently
+            have any out-of-the-box observability options - paid or unpaid, and
+            it is highly customizable, allowing for developers to create
+            extensions with observability features. With this in mind, we built
+            the first iteration of QMantis using an extended
+            <code>express-graphql</code> server, providing an observability
+            service packaged with an already popular GraphQL server.
           </p>
           <h2 id="section-7">7. Implementation Challenges</h2>
           <h3 id="section-7-1">
             7.1 Generating Metrics Data from <code>qmantis-express</code>
           </h3>
           <p>
-            Using <code>qmantis-express</code> as our GraphQL server came with significant
-            challenges. As we did not have control over the implementation of
-            the server, our team had to be creative in order to collect the
-            needed data from request and response objects - this is information
-            that is essential to generating accurate and GraphQL-specific
-            telemetry data, a key feature of QMantis.
+            Using <code>qmantis-express</code> as our GraphQL server came with
+            significant challenges. As we did not have control over the
+            implementation of the server, our team had to be creative in order
+            to collect the needed data from request and response objects - this
+            is information that is essential to generating accurate and
+            GraphQL-specific telemetry data, a key feature of QMantis.
           </p>
           <p>
             The two most difficult pieces of observability metrics data to
@@ -1658,10 +1674,10 @@
             that had 4xx or 5xx status codes. To get the accurate information,
             the server needed to access the response object before it was sent
             back to the client. To do that, we relied on a function from the
-            <code>qmantis-express</code> server to access the response object. However, when
-            the status code was 4xx or 5xx, the <code>qmantis-express</code> server did not
-            execute that function, so it no longer checked for errors or latency
-            information.
+            <code>qmantis-express</code> server to access the response object.
+            However, when the status code was 4xx or 5xx, the
+            <code>qmantis-express</code> server did not execute that function,
+            so it no longer checked for errors or latency information.
           </p>
           <img
             class="lazy downsize-m"
@@ -1703,8 +1719,8 @@
             to traces in our dashboard. To overcome this obstacle, we created
             two trace panels, one that shows traces by latency, making it easy
             to spot the outliers, while the other only shows error traces. As
-            both metrics and traces have a time-stamp, it is easy for the user to
-            filter the traces panels to look for the information they need.
+            both metrics and traces have a time-stamp, it is easy for the user
+            to filter the traces panels to look for the information they need.
           </p>
 
           <p>
@@ -1720,8 +1736,9 @@
             alt="installation steps"
           />
           <p>
-            <span class="steps-number">1.</span> Install the <code>qmantis-express</code> npm
-            package. If <code>qmantis-express</code> is not already installed, that needs to
+            <span class="steps-number">1.</span> Install the
+            <code>qmantis-express</code> npm package. If
+            <code>qmantis-express</code> is not already installed, that needs to
             be installed as well.
           </p>
           <img
@@ -1730,7 +1747,8 @@
             alt="npm install"
           />
           <p>
-            <span class="steps-number">2.</span> Clone the <code>qmantis-compose</code>
+            <span class="steps-number">2.</span> Clone the
+            <code>qmantis-compose</code>
             repository. This repository can be cloned anywhere on your machine.
           </p>
           <img
@@ -1741,10 +1759,10 @@
           <p>
             <span class="steps-number">3.</span> Import the QMantis variables
             into your “main” file. This is the file that imports the schema and
-            starts up the <code>express-graphql</code> server for your API. It is crucial to
-            note that all of the QMantis variables need to be imported before
-            the <code>express-graphql</code> server, or there may be some issues with
-            collecting traces.
+            starts up the <code>express-graphql</code> server for your API. It
+            is crucial to note that all of the QMantis variables need to be
+            imported before the <code>express-graphql</code> server, or there
+            may be some issues with collecting traces.
           </p>
           <img
             class="lazy shadow downsize-m"
@@ -1753,10 +1771,11 @@
           />
           <p>
             <span class="steps-number">4.</span> Set up the route handlers for
-            your <code>/graphql</code> endpoint. Note that the QMantis <code>registerLatency</code>
-            function needs to be passed to the <code>responseTime</code> function as an
-            argument and the main <code>qMantis</code> function needs to take the GraphQL
-            schema as an argument and be passed to the <code>express-graphql</code> server.
+            your <code>/graphql</code> endpoint. Note that the QMantis
+            <code>registerLatency</code> function needs to be passed to the
+            <code>responseTime</code> function as an argument and the main
+            <code>qMantis</code> function needs to take the GraphQL schema as an
+            argument and be passed to the <code>express-graphql</code> server.
           </p>
           <img
             class="lazy shadow downsize-m"
@@ -1765,10 +1784,11 @@
           />
           <p>
             <span class="steps-number">5.</span> Initialize the QMantis docker
-            container. <code>cd</code> into the <code>qmantis-compose</code> repository and run <code>docker
-              compose up</code>. The docker images will start to show in the terminal and
-            the <code>qmantis-compose</code> container with all the running images can be
-            visualized on Docker Desktop.
+            container. <code>cd</code> into the
+            <code>qmantis-compose</code> repository and run
+            <code>docker compose up</code>. The docker images will start to show
+            in the terminal and the <code>qmantis-compose</code> container with
+            all the running images can be visualized on Docker Desktop.
           </p>
           <div class="docker-images">
             <img
@@ -1792,8 +1812,8 @@
           </p>
           <p>
             <span class="steps-number">7.</span> Once requests start to come in,
-            navigate to localhost:3000 and view the prebuilt QMantis dashboard
-            in Grafana.
+            navigate to <code>localhost:3000</code> and view the prebuilt
+            QMantis dashboard in Grafana.
           </p>
           <h2 id="section-9">9. Future Work</h2>
           <h3 id="section-9-1">9.1 Expanding Metrics</h3>
@@ -1819,11 +1839,11 @@
           <p>
             Our team built the first iteration of QMantis using a customized
             express-graphql server but would like to continue working on the
-            aforementioned customized <code>apollo-server</code> prototype to give it fully
-            functional observability features, as this would give developers the
-            flexibility to work with various Node.js frameworks, aside from just
-            Express. Another option would be to add servers that work for other
-            languages, such as Ruby and Go.
+            aforementioned customized <code>apollo-server</code> prototype to
+            give it fully functional observability features, as this would give
+            developers the flexibility to work with various Node.js frameworks,
+            aside from just Express. Another option would be to add servers that
+            work for other languages, such as Ruby and Go.
           </p>
           <h3 id="section-9-4">9.4 Incorporating Alerts</h3>
           <p>
@@ -1837,22 +1857,50 @@
           <h2 id="section-10">10. References</h2>
           <ol>
             <li>
-              <p><a href="http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it">http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it</a></p>
+              <p>
+                <a
+                  href="http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it"
+                  >http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it</a
+                >
+              </p>
             </li>
             <li>
-              <p><a href="https://blogs.windows.com/windowsdeveloper/2014/03/20/instrumenting-your-app-for-telemetry-and-analytics/">https://blogs.windows.com/windowsdeveloper/2014/03/20/instrumenting-your-app-for-telemetry-and-analytics</a></p>
+              <p>
+                <a
+                  href="https://blogs.windows.com/windowsdeveloper/2014/03/20/instrumenting-your-app-for-telemetry-and-analytics/"
+                  >https://blogs.windows.com/windowsdeveloper/2014/03/20/instrumenting-your-app-for-telemetry-and-analytics</a
+                >
+              </p>
             </li>
             <li>
-              <p><a href="https://en.wikipedia.org/wiki/Telemetry">https://en.wikipedia.org/wiki/Telemetry</a></p>
+              <p>
+                <a href="https://en.wikipedia.org/wiki/Telemetry"
+                  >https://en.wikipedia.org/wiki/Telemetry</a
+                >
+              </p>
             </li>
             <li>
-              <p><a href="https://grafana.com/files/grafanacon_eu_2018/Tom_Wilkie_GrafanaCon_EU_2018.pdf">https://grafana.com/files/grafanacon_eu_2018/Tom_Wilkie_GrafanaCon_EU_2018.pdf</a></p>
+              <p>
+                <a
+                  href="https://grafana.com/files/grafanacon_eu_2018/Tom_Wilkie_GrafanaCon_EU_2018.pdf"
+                  >https://grafana.com/files/grafanacon_eu_2018/Tom_Wilkie_GrafanaCon_EU_2018.pdf</a
+                >
+              </p>
             </li>
             <li>
-              <p><a href="https://opentelemetry.io/docs/concepts/what-is-opentelemetry/">https://opentelemetry.io/docs/concepts/what-is-opentelemetry</a></p>
+              <p>
+                <a
+                  href="https://opentelemetry.io/docs/concepts/what-is-opentelemetry/"
+                  >https://opentelemetry.io/docs/concepts/what-is-opentelemetry</a
+                >
+              </p>
             </li>
             <li>
-              <p><a href="https://opentelemetry.io/docs/collector/">https://opentelemetry.io/docs/collector</a></p>
+              <p>
+                <a href="https://opentelemetry.io/docs/collector/"
+                  >https://opentelemetry.io/docs/collector</a
+                >
+              </p>
             </li>
           </ol>
           <img

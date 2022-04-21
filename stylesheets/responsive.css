@@ -172,17 +172,6 @@
     display: flex;
   }
 
-  /* 
-
-  #start-here div.static-logo-grey-light {
-    background-image: url("../images/logo/QMantis_graphic_greyscale.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 25%;
-    background-position: calc(50% / 3) calc(50% + 2rem);
-    display: flex;
-  } */
-
   #start-here .h-full {
     height: calc(100vh - 4rem);
   }

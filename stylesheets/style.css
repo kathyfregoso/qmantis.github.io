@@ -107,7 +107,7 @@ aside::-webkit-scrollbar {
   padding: 0 1rem;
   position: fixed;
   width: 100%;
-  z-index: 100; 
+  z-index: 100;
   font-family: "Fredoka", sans-serif;
 }
 
@@ -365,7 +365,7 @@ aside::-webkit-scrollbar {
 
 .prose sup {
   text-align: justify;
-  font-size: .75rem;
+  font-size: 0.75rem;
   color: var(--qmantis-green-sheen);
 }
 
@@ -451,15 +451,15 @@ img.shadow {
   border-radius: 7px;
 }
 
-.prose figcaption p code {
+.prose figcaption p {
   text-align: center;
-  font-size: 0.83rem;
+  font-size: 0.9rem;
   font-family: "Fredoka", sans-serif;
 }
 
-.img-caption {
+.prose figcaption p code {
   text-align: center;
-  font-size: 0.83rem;
+  font-size: 0.9rem;
   font-family: "Fredoka", sans-serif;
 }
 
