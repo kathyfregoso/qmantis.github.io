@@ -197,7 +197,7 @@
 @media (min-width: 1280px) {
   /* Case Study */
   :root {
-    --toc-width: 250px;
+    --toc-width: 320px;
   }
 
   #toc {

@@ -325,7 +325,8 @@ aside::-webkit-scrollbar {
 
 .prose {
   color: var(--qmantis-dark-purple);
-  max-width: 100ch;
+  width: 78%;
+  max-width: 88ch;
   margin: 0 auto;
 }
 
@@ -339,17 +340,14 @@ aside::-webkit-scrollbar {
 }
 
 .prose h2 {
-  text-align: justify;
   font-size: 1.75rem;
 }
 
 .prose h3 {
-  text-align: justify;
   font-size: 1.5rem;
 }
 
 .prose h4 {
-  text-align: justify;
   font-size: 1.25rem;
 }
 
@@ -359,7 +357,6 @@ aside::-webkit-scrollbar {
 }
 
 .prose sup {
-  text-align: justify;
   font-size: 0.75rem;
   color: var(--qmantis-green-sheen);
 }
@@ -413,6 +410,10 @@ aside::-webkit-scrollbar {
 
 #case-study img.downsize-m {
   width: 30rem;
+}
+
+#case-study img.downsize-ms {
+  width: 24rem;
 }
 
 #case-study img.downsize-s {
