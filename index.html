@@ -1013,18 +1013,18 @@
             now considering and comparing some existing GraphQL observability
             solutions. They have narrowed down their choice of solutions to two
             broad categories: they could use fully managed services like Apollo
-            or Hasura, or, they could take a DIY approach that pieces together
-            open source tools.
+            Studio or Hasura Cloud, or, they could take a DIY approach that
+            pieces together open source tools.
           </p>
           <h3 id="section-4-1">4.1 Fully Managed Cloud Services</h3>
           <p>
-            Apollo and Hasura are two established, fully managed observability
-            and monitoring cloud services for GraphQL. These platforms provide
-            meaningful GraphQL-specific information, such as each operation name
-            and type, as well as an abundance of features, however, only some of
-            their services are free.
+            Apollo Studio and Hasura Cloud are two established, fully managed
+            observability and monitoring cloud services for GraphQL. These
+            platforms provide meaningful GraphQL-specific information, such as
+            each operation name and type, as well as an abundance of features,
+            however, only some of their services are free.
           </p>
-          <h4 id="section-4-1-1">4.1.1 Apollo</h4>
+          <h4 id="section-4-1-1">4.1.1 Apollo Studio</h4>
           <p>
             Apollo Studio is a cloud platform that offers monitoring of metrics
             and traces. It has many different features, as well as a relatively
@@ -1054,18 +1054,18 @@
             alt="Apollo dashboard"
           />
           <p>
-            This is another view of the Apollo dashboard. The top of the
-            screenshot shows the request latency over time, which helps show
+            This is another view of the Apollo Studio's dashboard. The top of
+            the screenshot shows the request latency over time, which helps show
             when slow requests happened. On the bottom is a visualization of the
             request latency distribution, which makes it easy to spot outliers
             and slow requests.
           </p>
-          <h4 id="section-4-1-2">4.1.2 Hasura</h4>
+          <h4 id="section-4-1-2">4.1.2 Hasura Cloud</h4>
           <p>
             Hasura Cloud is another fully-managed cloud service that handles the
             infrastructure of GraphQL applications, and offers real-time metrics
-            and tracing. Like Apollo, Hasura offers many features and has an
-            easy-to-use user interface.
+            and tracing. Like Apollo Studio, Hasura Cloud offers many features
+            and has an easy-to-use user interface.
           </p>
           <img
             class="lazy downsize-xs"
@@ -1078,8 +1078,8 @@
             alt="Hasura dashboard"
           />
           <p>
-            Above is a view of Hasura's dashboard. It is somewhat similar to the
-            Apollo Studio dashboard, in that it shows the same three main
+            Above is a view of Hasura Cloud's dashboard. It is somewhat similar
+            to the Apollo Studio dashboard, in that it shows the same three main
             metrics: request rate, error rate, and latency. It also displays
             graphs for the most frequently used operations, the slowest
             operations, and operations resulting in the most errors.
@@ -1090,24 +1090,24 @@
             alt="hand"
           />
           <p>
-            Novels and Barns could choose to use Apollo or Hasura as their
-            observability tool. However, Apollo Studio requires users to pay to
-            access traces. The free version of Hasura limits users to 60
-            requests per minute. Novels and Barns is getting more traffic with
-            new customers, so they would rather not have this limit. Also,
-            Apollo or Hasura both own any collected data, meaning the team would
-            not be able to download or visualize data collected past a certain
-            retention period.
+            Novels and Barns could choose to use Apollo Studio or Hasura Cloud
+            as their observability tool. However, Apollo Studio requires users
+            to pay to access traces. The free version of Hasura Cloud limits
+            users to 60 requests per minute. Novels and Barns is getting more
+            traffic with new customers, so they would rather not have this
+            limit. Also, Apollo Studio or Hasura Cloud both own any collected
+            data, meaning the team would not be able to download or visualize
+            data collected past a certain retention period.
           </p>
           <p>
-            While Apollo and Hasura are great options for large enterprise
-            companies with many engineers and big budgets, a small company like
-            Novels and Barns prefers to minimize costs as much as possible.
-            Also, although Apollo and Hasura offer fully-serviced, easy to setup
-            observability solutions for GraphQL APIs, data ownership is a
-            must-have for the Novels and Barns team. So, in this case, the
-            Novels and Barns team decides that neither Apollo nor Hasura would
-            be the best fit for them.
+            While Apollo Studio and Hasura Cloud are great options for large
+            enterprise companies with many engineers and big budgets, a small
+            company like Novels and Barns prefers to minimize costs as much as
+            possible. Also, although Apollo Studio and Hasura Cloud offer
+            fully-serviced, easy to setup observability solutions for GraphQL
+            APIs, data ownership is a must-have for the Novels and Barns team.
+            So, in this case, the Novels and Barns team decides that neither
+            Apollo Studio nor Hasura Cloud would be the best fit for them.
           </p>
           <h3 id="section-4-2">4.2 DIY</h3>
           <img
@@ -1127,7 +1127,7 @@
             However, a DIY approach has a steep learning curve which involves
             researching many different components and stitching them together.
             This approach is research-intensive, resource-demanding, and
-            time-consuming. If Novels and barns had a big engineering team, they
+            time-consuming. If Novels and Barns had a big engineering team, they
             would probably choose the DIY approach. However, with a team of only
             two engineers, they would rather spend their time and effort
             focusing on the business logic of their application. Therefore,
@@ -1354,13 +1354,13 @@
           <p>
             This diagram gives an overview of the QMantis architecture. There
             are two main overarching and interconnected components:
-            <code>qmantis-express</code> and qmantis-compose. On the left,
-            <code>qmantis-express</code> is a npm package with a configured
-            express-graphql server that is responsible for generating the
-            metrics and traces. On the right, qmantis-compose lets the user
-            deploy the QMantis architecture on their own server using Docker in
-            order to process, export, store, and visualize incoming metrics and
-            traces.
+            <code>qmantis-express</code> and <code>qmantis-compose</code>. On
+            the left, <code>qmantis-express</code> is a npm package with a
+            configured <code>express-graphql</code> server that is responsible
+            for generating the metrics and traces. On the right,
+            <code>qmantis-compose</code> lets the user deploy the QMantis
+            architecture on their own server using Docker in order to process,
+            export, store, and visualize incoming metrics and traces.
           </p>
           <p>
             Now, to provide a better understanding, let us break up this
@@ -1386,8 +1386,8 @@
             Visualize / Analyze Data with Grafana
           </p>
           <h4 id="section-5-3-1">
-            5.3.1 Phase 1: Generate Data with the
-            <code>qmantis-express</code> GraphQL server and OpenTelemetry SDKs
+            5.3.1 Phase 1: Generate Data with the qmantis-express GraphQL server
+            and OpenTelemetry SDKs
           </h4>
           <img
             class="lazy downsize-l"
@@ -1454,8 +1454,9 @@
           />
           <p>
             The Export phase, the 2nd phase of the QMantis architecture, is part
-            of the qmantis-compose component. Once telemetry data is created, it
-            needs to be exported before anything useful can be done to it.
+            of the <code>qmantis-compose</code> component. Once telemetry data
+            is created, it needs to be exported before anything useful can be
+            done to it.
           </p>
           <p>
             In the case of traces, the data is exported to the OpenTelemetry
@@ -1509,10 +1510,10 @@
           />
           <p>
             The third phase of the QMantis architecture, which is part of the
-            qmantis-compose component, is storage. Before we can visualize and
-            analyze telemetry data on Grafana, data needs to be stored
-            somewhere. Long-term storage is useful for users because they can
-            access not only current data, but also older data, which will be
+            <code>qmantis-compose</code> component, is storage. Before we can
+            visualize and analyze telemetry data on Grafana, data needs to be
+            stored somewhere. Long-term storage is useful for users because they
+            can access not only current data, but also older data, which will be
             very helpful if they want to analyze trends in their GraphQL API.
           </p>
           <p>
@@ -1554,18 +1555,19 @@
             alt="phase 4"
           />
           <p>
-            Finally, the last phase of the qmantis-compose component involves
-            visualizing and analyzing data. To visualize the data, our team
-            chose to use Grafana, a popular open-source tool for observability
-            dashboards that comes with many options and functionalities. Our
-            team pre-configured an observability dashboard so that users can
-            view and analyze their application's request rate, request latency,
-            error rate, all their traces, and error traces. Grafana connects
-            directly to the Promscale connector and TimescaleDB in order to
-            obtain metrics data, as well as Jaeger, an open-source tool for
-            end-to-end distributed tracing, to query the traces data. In the
-            design decisions section, we will discuss in detail why we chose
-            Grafana as our visualization tool.
+            Finally, the last phase of the
+            <code>qmantis-compose</code> component involves visualizing and
+            analyzing data. To visualize the data, our team chose to use
+            Grafana, a popular open-source tool for observability dashboards
+            that comes with many options and functionalities. Our team
+            pre-configured an observability dashboard so that users can view and
+            analyze their application's request rate, request latency, error
+            rate, all their traces, and error traces. Grafana connects directly
+            to the Promscale connector and TimescaleDB in order to obtain
+            metrics data, as well as Jaeger, an open-source tool for end-to-end
+            distributed tracing, to query the traces data. In the design
+            decisions section, we will discuss in detail why we chose Grafana as
+            our visualization tool.
           </p>
           <h4 id="section-5-3-5">
             5.3.5 Overall View of QMantis Architecture's Components
@@ -1578,17 +1580,17 @@
           <p>
             To recap, the above illustrates the QMantis architecture and its two
             main components: <code>qmantis-express</code> (which consists of the
-            Generate phase) and qmantis-compose (which consists of the Export,
-            Store, and Visualize phases).
+            Generate phase) and <code>qmantis-compose</code> (which consists of
+            the Export, Store, and Visualize phases).
           </p>
           <p>
             In summary, <code>qmantis-express</code> is a npm package, composed
             of OpenTelemetry SDKs and a GraphQL server observability
             configuration. It is responsible for generating the metrics and
-            traces data.qmantis-compose lets the user quickly and seamlessly
-            deploy the QMantis architecture on their own server using Docker. It
-            contains all the tools necessary to export, store, and visualize
-            GraphQL-specific observability data.
+            traces data.<code>qmantis-compose</code> lets the user quickly and
+            seamlessly deploy the QMantis architecture on their own server using
+            Docker. It contains all the tools necessary to export, store, and
+            visualize GraphQL-specific observability data.
           </p>
           <h2 id="section-6">6. Design Decisions</h2>
           <p>
@@ -1659,7 +1661,7 @@
           </p>
           <h2 id="section-7">7. Implementation Challenges</h2>
           <h3 id="section-7-1">
-            7.1 Generating Metrics Data from <code>qmantis-express</code>
+            7.1 Generating Metrics Data from qmantis-express
           </h3>
           <p>
             Using <code>qmantis-express</code> as our GraphQL server came with
@@ -1691,7 +1693,7 @@
             approach worked, and we were able to obtain the needed data, but it
             came with the limitations mentioned above. Ultimately, we found
             better solutions to these challenges: using an existing npm package
-            called response-time to obtain latency data, and passing trace data
+            called <code>response-time</code> to obtain latency data, and passing trace data
             to a custom function to accurately count errors.
           </p>
           <h3 id="section-7-2">7.2 Connecting Metrics with Traces</h3>
@@ -1839,12 +1841,13 @@
           <h3 id="section-9-3">9.3 Adding More GraphQL Server Types</h3>
           <p>
             Our team built the first iteration of QMantis using a customized
-            express-graphql server but would like to continue working on the
-            aforementioned customized <code>apollo-server</code> prototype to
-            give it fully functional observability features, as this would give
-            developers the flexibility to work with various Node.js frameworks,
-            aside from just Express. Another option would be to add servers that
-            work for other languages, such as Ruby and Go.
+            <code>express-graphql</code> server but would like to continue
+            working on the aforementioned customized
+            <code>apollo-server</code> prototype to give it fully functional
+            observability features, as this would give developers the
+            flexibility to work with various Node.js frameworks, aside from just
+            Express. Another option would be to add servers that work for other
+            languages, such as Ruby and Go.
           </p>
           <h3 id="section-9-4">9.4 Incorporating Alerts</h3>
           <p>
