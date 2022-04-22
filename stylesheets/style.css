@@ -340,11 +340,6 @@ aside::-webkit-scrollbar {
 
 .prose h2 {
   text-align: justify;
-  font-size: 2rem;
-}
-
-.prose h2 {
-  text-align: justify;
   font-size: 1.75rem;
 }
 
@@ -388,7 +383,6 @@ aside::-webkit-scrollbar {
 }
 
 .prose code {
-  /* background-color: var(--gray-100); */
   color: var(--qmantis-orange);
   font-family: monospace;
   font-weight: normal;
@@ -469,6 +463,10 @@ img.shadow {
   font-weight: bold;
 }
 
+ol a {
+  overflow-wrap: break-word;
+}
+
 /* Our Team */
 #our-team > div {
   background-color: var(--qmantis-orange);
@@ -518,9 +516,6 @@ img.shadow {
 
 #our-team .profile > * + * {
   margin-top: 1.5rem;
-}
-
-#our-team .profile > div {
 }
 
 #our-team .profile > div > * + * {
