@@ -87,11 +87,11 @@ aside::-webkit-scrollbar {
   display: none;
 }
 
-.main-section:before {
+.main-section::before {
   display: block;
   content: " ";
-  margin-top: -4rem;
-  height: 4rem;
+  margin-top: 0rem;
+  height: 0rem;
   visibility: hidden;
   pointer-events: none;
   background-color: var(--qmantis-floral-white);
@@ -574,6 +574,10 @@ ol a {
 }
 
 /* Youtube */
+#presentation h2 {
+  margin-top: 1rem;
+}
+
 #presentation div {
   padding: 4rem 0;
   text-align: center;
