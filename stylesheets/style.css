@@ -94,7 +94,7 @@ aside::-webkit-scrollbar {
   height: 4rem;
   visibility: hidden;
   pointer-events: none;
-  background-color: yellow;
+  background-color: var(--qmantis-floral-white);
 }
 
 /* Header */
@@ -260,6 +260,7 @@ aside::-webkit-scrollbar {
   justify-content: center;
   height: 1.25rem;
   width: 1.25rem;
+  min-width: 1.25rem;
 }
 
 #toc .bullet div {
@@ -325,7 +326,6 @@ aside::-webkit-scrollbar {
 
 .prose {
   color: var(--qmantis-dark-purple);
-  width: 78%;
   max-width: 88ch;
   margin: 0 auto;
 }
@@ -385,7 +385,7 @@ aside::-webkit-scrollbar {
   font-weight: normal;
   font-size: 1rem;
   border-radius: 0.25rem;
-  padding: 0.25rem 0.375rem;
+  padding: 0.25rem 0.35rem;
   line-height: 1.5rem;
 }
 
@@ -459,7 +459,7 @@ img.shadow {
 }
 
 .steps-number {
-  color: var(--qmantis-dark-orange);
+  color: var(--qmantis-dark-purple);
   size: 1.2rem;
   font-weight: bold;
 }
@@ -535,10 +535,12 @@ ol a {
 
 #our-team .profile > div > div > h3 {
   color: var(--gray-600);
+  font-weight: 600;
 }
 
 #our-team .profile > div > div > p {
-  color: var(--gray-400);
+  color: var(--gray-500);
+  font-size: 0.9rem;
 }
 
 #our-team .social {
