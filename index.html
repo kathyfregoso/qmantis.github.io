@@ -1317,7 +1317,7 @@
             executions - and latency time is now under 200 ms. In an expanded
             view of this trace that shows all of its 156 spans, the first group
             of asynchronous spans retrieves books, while the second group
-            retrieves authors and genres related to those books. Since it's
+            retrieves authors and genres related to those books. Since it is
             impossible to find the author or the genre of a book before knowing
             what the book is, this is as efficient as this query can get. In
             addition, this trace gives us confidence that this resolver could
@@ -1661,25 +1661,25 @@
           </p>
           <h2 id="section-7">7. Implementation Challenges</h2>
           <h3 id="section-7-1">
-            7.1 Generating Metrics Data from qmantis-express
+            7.1 Generating Metrics Data from express-graphql
           </h3>
           <p>
-            Using <code>qmantis-express</code> as our GraphQL server came with
+            Using <code>express-graphql</code> as our GraphQL server came with
             significant challenges. As we did not have control over the
             implementation of the server, our team had to be creative in order
-            to collect the needed data from request and response objects - this
-            is information that is essential to generating accurate and
+            to collect the needed data from request and response objects - 
+            information that is essential to generating accurate and
             GraphQL-specific telemetry data, a key feature of QMantis.
           </p>
           <p>
             The two most difficult pieces of observability metrics data to
-            obtain were counting errors and collecting latency data for requests
-            that had 4xx or 5xx status codes. To get the accurate information,
+            obtain were: the error count and the latency data for requests
+            that had 4xx or 5xx status codes. To get accurate information,
             the server needed to access the response object before it was sent
             back to the client. To do that, we relied on a function from the
-            <code>qmantis-express</code> server to access the response object.
+            <code>express-graphql</code> server to access the response object.
             However, when the status code was 4xx or 5xx, the
-            <code>qmantis-express</code> server did not execute that function,
+            <code>express-graphql</code> server did not execute that function,
             so it no longer checked for errors or latency information.
           </p>
           <img
