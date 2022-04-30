@@ -548,10 +548,9 @@
             operations.
           </p>
           <p>
-            Before diving into the details of how the creation of QMantis, let
-            us introduce Novels and Barns, a hypothetical company that can
-            benefit from adding a GraphQL-specific observability service to
-            their API.
+            Before diving into the details of the creation of QMantis, let us
+            introduce Novels and Barns, a hypothetical company that can benefit
+            from adding a GraphQL-specific observability service to their API.
           </p>
           <h3 id="section-1-2">1.2 Novels and Barns</h3>
           <img
@@ -682,7 +681,7 @@
           <p>
             Up until recently, the Novels and Barns mobile application used a
             REST API. Say a customer wanted to view a specific category of books
-            on their device - to do so, the client application had to make many
+            on their device—to do so, the client application had to make many
             requests, and each response came with extra unneeded information; in
             order to display only the requested information, the client had to
             perform the additional work of filtering for relevant information.
@@ -752,8 +751,8 @@
             application performance degrading? Is latency higher than usual? Are
             users encountering errors? When are the downtimes? Metrics help
             engineering teams spot potential problems and stay proactive. For
-            example, developers can use metric data to identify usage trends -
-            this information can be utilized in various ways, such as scheduling
+            example, developers can use metric data to identify usage trends.
+            This information can be utilized in various ways, such as scheduling
             maintenance during known downtimes, when there is less traffic.
           </p>
           <p>
@@ -961,7 +960,7 @@
             With GraphQL, it is common for responses with errors to return a
             status code of 200. Therefore, relying on the response status code
             to count errors will underestimate the "real" error rate of GraphQL
-            APIs. The diagram above tracks the error rate of a GraphQL API - the
+            APIs. The diagram above tracks the error rate of a GraphQL API—the
             dashed line represents the API's actual error rate, while the solid
             line below tracks the API's error rate using 4xx and 5xx request
             status codes. It is evident that tracking status codes is not a
@@ -1021,8 +1020,8 @@
             Apollo Studio and Hasura Cloud are two established, fully managed
             observability and monitoring cloud services for GraphQL. These
             platforms provide meaningful GraphQL-specific information, such as
-            each operation name and type, as well as an abundance of features,
-            however, only some of their services are free.
+            each operation name and type, as well as an abundance of features.
+            However, only some of their services are free.
           </p>
           <h4 id="section-4-1-1">4.1.1 Apollo Studio</h4>
           <p>
@@ -1314,7 +1313,7 @@
             The above image shows trace information for the operation made using
             the efficient resolver. In the above trace, spans execute
             asynchronously. There are no significant gaps between span
-            executions - and latency time is now under 200 ms. In an expanded
+            executions, and latency time is now under 200 ms. In an expanded
             view of this trace that shows all of its 156 spans, the first group
             of asynchronous spans retrieves books, while the second group
             retrieves authors and genres related to those books. Since it is
@@ -1414,7 +1413,7 @@
             To create the telemetry data, we configured an existing GraphQL
             server with observability extensions, added custom express
             middleware functions, and added two pre-configured OpenTelemetry
-            Node SDKs (one for Tracing, the other for Metrics).
+            Node SDKs (one for tracing, the other for metrics).
           </p>
           <img
             class="lazy downsize-xl"
@@ -1522,10 +1521,10 @@
             time-stamped data. Time matters. If there is a potential problem, it
             is important to know if it happened at 1 pm or 8 pm. If a user wants
             to do maintenance during downtime, they need to know when there are
-            the downtimes. Also, time-series databases support a high-rate of
-            inserts and a low-rate of modifications and deletions. This is a
+            the downtimes. Also, time-series databases support a high rate of
+            inserts and a low rate of modifications and deletions. This is a
             great fit for QMantis' use case because when a metric or trace is
-            created, there is no need to ever change it, the user only needs to
+            created, there is no need to ever change it—the user only needs to
             insert it and read it.
           </p>
           <p>
@@ -1599,13 +1598,13 @@
           </p>
           <h3 id="section-6-1">6.1 Grafana vs Custom UI</h3>
           <p>
-            When it came to visualizing data, our team considered two options -
-            building a custom user interface or using Grafana. A custom UI would
-            have provided two main benefits: we could have branded the UI to add
-            a QMantis-specific design, and we could have displayed data more
-            intuitively - especially for a first-time user. On another hand, we
-            would have to maintain a whole extra code base and any updates to
-            the UI would demand a lot of time.
+            When it came to visualizing data, our team considered two
+            options—building a custom user interface or using Grafana. A custom
+            UI would have provided two main benefits: we could have branded the
+            UI to add a QMantis-specific design, and we could have displayed
+            data more intuitively, especially for a first-time user. On another
+            hand, we would have to maintain a whole extra code base and any
+            updates to the UI would demand a lot of time.
           </p>
 
           <p>
@@ -1642,7 +1641,7 @@
             managed Apollo Studio observability service. Our team considered
             using <code>apollo-server</code> to give users the option to use a
             GraphQL server that was framework-agnostic for Node.js. However,
-            this option had a major downside - the way
+            this option had a major downside—the way
             <code>apollo-server</code> is implemented makes it very difficult to
             extract meaningful trace data, even when creating custom plugins to
             extract this information.
@@ -1650,12 +1649,12 @@
 
           <p>
             In the end, we landed on <code>express-graphql</code>, a popular
-            JavaScript server for GraphQL - used by millions of developers
-            around the world. <code>express-graphql</code> does not currently
-            have any out-of-the-box observability options - paid or unpaid, and
-            it is highly customizable, allowing for developers to create
-            extensions with observability features. With this in mind, we built
-            the first iteration of QMantis using an extended
+            JavaScript server for GraphQL, used by millions of developers around
+            the world. <code>express-graphql</code> does not currently have any
+            out-of-the-box observability options—paid or unpaid, and it is
+            highly customizable, allowing for developers to create extensions
+            with observability features. With this in mind, we built the first
+            iteration of QMantis using an extended
             <code>express-graphql</code> server, providing an observability
             service packaged with an already popular GraphQL server.
           </p>
@@ -1667,16 +1666,16 @@
             Using <code>express-graphql</code> as our GraphQL server came with
             significant challenges. As we did not have control over the
             implementation of the server, our team had to be creative in order
-            to collect the needed data from request and response objects - 
-            information that is essential to generating accurate and
+            to collect the needed data from request and response
+            objects—information that is essential to generating accurate and
             GraphQL-specific telemetry data, a key feature of QMantis.
           </p>
           <p>
             The two most difficult pieces of observability metrics data to
-            obtain were: the error count and the latency data for requests
-            that had 4xx or 5xx status codes. To get accurate information,
-            the server needed to access the response object before it was sent
-            back to the client. To do that, we relied on a function from the
+            obtain were: the error count and the latency data for requests that
+            had 4xx or 5xx status codes. To get accurate information, the server
+            needed to access the response object before it was sent back to the
+            client. To do that, we relied on a function from the
             <code>express-graphql</code> server to access the response object.
             However, when the status code was 4xx or 5xx, the
             <code>express-graphql</code> server did not execute that function,
@@ -1693,8 +1692,8 @@
             approach worked, and we were able to obtain the needed data, but it
             came with the limitations mentioned above. Ultimately, we found
             better solutions to these challenges: using an existing npm package
-            called <code>response-time</code> to obtain latency data, and passing trace data
-            to a custom function to accurately count errors.
+            called <code>response-time</code> to obtain latency data, and
+            passing trace data to a custom function to accurately count errors.
           </p>
           <h3 id="section-7-2">7.2 Connecting Metrics with Traces</h3>
           <p>
