@@ -394,6 +394,23 @@ aside::-webkit-scrollbar {
   content: "";
 }
 
+.prose figcaption p {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+.prose figcaption p code {
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Fredoka", sans-serif;
+}
+
+.prose ol > li::before {
+  color: var(--qmantis-dark-purple);
+  font-size: 1rem;
+}
+
 #case-study img {
   display: block;
   margin-left: auto;
@@ -444,18 +461,6 @@ aside::-webkit-scrollbar {
 img.shadow {
   filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.4));
   border-radius: 7px;
-}
-
-.prose figcaption p {
-  text-align: center;
-  font-size: 0.9rem;
-  font-family: "Fredoka", sans-serif;
-}
-
-.prose figcaption p code {
-  text-align: center;
-  font-size: 0.9rem;
-  font-family: "Fredoka", sans-serif;
 }
 
 .steps-number {
